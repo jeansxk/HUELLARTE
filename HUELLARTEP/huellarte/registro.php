@@ -53,7 +53,8 @@ if ($_POST) {
             exit;
         }
         
-        // Check if document number already exists (if it's required to be unique)
+        // Check if document number already exists (comentado porque no está en la tabla aún)
+        /*
         if (!empty($numeroDocumento)) {
             $stmt = $pdo->prepare("SELECT idUsuario FROM usuario WHERE numeroDocumento = ?");
             $stmt->execute([$numeroDocumento]);
@@ -62,14 +63,15 @@ if ($_POST) {
                 exit;
             }
         }
+        */
         
         // Hash password
         $hashedPassword = password_hash($contrasena, PASSWORD_DEFAULT);
         
-        // Insert new user with all form fields
-        $stmt = $pdo->prepare("INSERT INTO usuario (idTipousuario, idTipodoc, nombres, apellidos, celular, correo, contrasena, numeroDocumento, idCiudad, idDepartamento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        // Insert new user with all form fields (sin numeroDocumento por ahora)
+        $stmt = $pdo->prepare("INSERT INTO usuario (idTipousuario, idTipodoc, nombres, apellidos, celular, correo, contraseña, idCiudad, idDepartamento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
-        if ($stmt->execute([$idTipousuario, $idTipodoc, $nombres, $apellidos, $celular, $correo, $hashedPassword, $numeroDocumento, $idCiudad, $idDepartamento])) {
+        if ($stmt->execute([$idTipousuario, $idTipodoc, $nombres, $apellidos, $celular, $correo, $hashedPassword, $idCiudad, $idDepartamento])) {
             echo json_encode(['success' => true, 'message' => 'Usuario registrado exitosamente']);
         } else {
             echo json_encode(['success' => false, 'message' => 'Error al registrar usuario']);
