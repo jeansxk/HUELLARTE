@@ -1,0 +1,290 @@
+<!doctype html> 
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/923b6588de.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos adicionales para mejorar responsividad -->
+    <style>
+    /* Mostrar dropdown al pasar el mouse en pantallas grandes */
+    @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    }
+
+    .container-bienestar {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+        .accordion-button {
+            font-size: 0.95rem;
+            padding: 0.75rem 1rem;
+        }
+
+        .fs-4 {
+            font-size: 1.1rem !important;
+        }
+
+        .display-5 {
+            font-size: 1.8rem !important;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="index.html#">
+                  <img src="media/logo.png" width="200px" height="150px" />
+              </a>
+            
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                  <!-- Menú izquierdo -->
+                  <ul class="navbar-nav mb-2 mb-lg-0">
+                      <!-- Dropdown Inicio -->
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="inicioDropdown" role="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              Inicio
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="inicioDropdown">
+                              <li><a class="dropdown-item" href="index.html#Contacto">Contáctenos</a></li>
+                              <li><a class="dropdown-item" href="index.html#Nosotros">Nosotros</a></li>
+                          </ul>
+                      </li>
+                    
+                      <li class="nav-item">
+                          <a class="nav-link" href="index.html#Servicios">Servicios</a>
+                      </li>
+                    
+                      <li class="nav-item">
+                          <a class="nav-link" href="Fundaciones.html">Fundaciones</a>
+                      </li>
+                    
+                      <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="Bienestar.html">Bienestar Animal</a>
+                      </li>
+                  </ul>
+                
+                  <!-- Botón Ingresar a la derecha -->
+                  <ul class="navbar-nav mb-2 mb-lg-0">
+                      <li class="nav-item">
+                          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content shadow">
+              <div class="modal-header bg-primary bg-gradient text-white">
+                <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Ingresar</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="d-flex justify-content-center mb-4">
+                  <img src="media/logo.png" alt="Huellarte Logo" width="250px" height="180px" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label fw-semibold"><i class="bi bi-envelope me-2"></i>Correo Electrónico</label>
+                  <input type="email" class="form-control border-primary" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                  <label for="passwordInput" class="form-label fw-semibold"><i class="bi bi-lock me-2"></i>Contraseña</label>
+                  <input type="password" class="form-control border-primary" id="passwordInput" placeholder="Contraseña">
+                </div>
+                <div class="text-center mt-4">
+                  <p>¿Todavía no te has registrado? <a href="registra.html" class="btn btn-sm btn-outline-primary ms-2 fw-bold">REGISTRATE</a></p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary fw-semibold" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary fw-semibold">Ingresar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <!-- Container con ancho máximo centrado -->
+    <div class="container container-bienestar mt-5">
+      <h2 class="text-center mb-4 display-5 fw-bold text-primary">
+        <i class="fa fa-dog me-3 blue"></i>Bienestar Animal
+      </h2>
+      <div class="alert alert-info p-4 shadow-sm text-dark border-start border-4 border-primary rounded-3">
+        <p class="fs-4 mb-0 lh-base">
+          Tener una mascota ofrece beneficios tanto sociales como ambientales. A nivel social, mejora el bienestar emocional, 
+          fomenta la responsabilidad, la actividad física y la interacción con otras personas. En lo ambiental, adoptar en 
+          lugar de comprar ayuda a reducir animales en la calle, y su cuidado puede fomentar una mayor conciencia sobre 
+          el respeto a la naturaleza y el entorno.
+        </p>
+      </div>
+    </div>  
+    
+    <!-- Sección del acordeón centrada -->
+    <section class="BienestarAnimal container container-bienestar py-4">
+      <div class="accordion accordion-flush" id="accordionExample">
+        <div class="accordion-item border border-light-subtle rounded-3 mb-3 shadow-sm">
+          <h2 class="accordion-header">
+            <button class="accordion-button fw-semibold rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <i class="fa fa-tree me-2 text-success"></i> Ecosistemas locales
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-light bg-opacity-50">
+              <strong class="d-block mb-2 text-success">1. Alteración de Ecosistemas Locales: </strong>
+              <p>Los animales callejeros, en especial los perros y gatos, pueden tener un efecto devastador en los ecosistemas naturales cercanos a las áreas urbanas:</p>
+              <div class="ms-md-4 ms-2 mt-3">
+                <p class="mb-2"><i class="fa fa-paw me-2 text-secondary"></i> <strong>Depredación de Fauna Nativa:</strong> Los gatos callejeros son conocidos por cazar y depredar aves, pequeños mamíferos y reptiles, lo que altera las cadenas tróficas locales y puede llevar a la disminución de poblaciones de especies nativas.</p>
+                <p><i class="fa fa-paw me-2 text-secondary"></i> <strong>Competencia con Especies Autóctonas:</strong> Los animales callejeros también compiten con la fauna nativa por recursos, como alimentos y refugios. Esto puede reducir la supervivencia de especies autóctonas, afectando su distribución y diversidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item border border-light-subtle rounded-3 mb-3 shadow-sm">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-semibold rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <i class="fa fa-trash-alt me-2 text-danger"></i> Contaminación
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-light bg-opacity-50">
+              <strong class="d-block mb-2 text-danger">2. Contaminación: </strong>
+              <div class="ms-md-4 ms-2 mt-3">
+                <p class="mb-2"><i class="fa fa-paw me-2 text-secondary"></i> <strong>Basura y Desperdicios:</strong> Los animales callejeros, especialmente aquellos que buscan alimento en vertederos o basureros, pueden contribuir a la dispersión de residuos sólidos. Al alimentarse de la basura, los animales dispersan desperdicios por toda la zona, lo que agrava la contaminación del suelo y del agua.</p>
+                <p><i class="fa fa-paw me-2 text-secondary"></i> <strong>Contaminación de Aguas:</strong> Los animales callejeros pueden defecar en áreas no controladas, como parques, ríos o arroyos. Esto puede llevar a la contaminación del agua con patógenos y bacterias, afectando la calidad del agua y generando problemas de salud pública.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item border border-light-subtle rounded-3 mb-3 shadow-sm">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-semibold rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <i class="fa fa-virus me-2 text-warning"></i> Enfermedades
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-light bg-opacity-50">
+              <strong class="d-block mb-2 text-warning">3. Propagación de Enfermedades: </strong>
+              <p>Los animales errantes son portadores de una serie de enfermedades que pueden transmitirse tanto a otros animales como a los seres humanos:</p>
+              <div class="ms-md-4 ms-2 mt-3">
+                <p class="mb-2"><i class="fa fa-paw me-2 text-secondary"></i> <strong>Zoonosis:</strong> Enfermedades como la rabia, leptospirosis, parásitos intestinales y enfermedades de la piel pueden ser transmitidas por los animales en estado de calle. La presencia de estos animales en áreas urbanas o rurales aumenta el riesgo de propagación de estas enfermedades.</p>
+                <p><i class="fa fa-paw me-2 text-secondary"></i> <strong>Desequilibrio Ecológico:</strong> Los animales callejeros también pueden ser vectores de enfermedades en la fauna silvestre, afectando el equilibrio de los ecosistemas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item border border-light-subtle rounded-3 mb-3 shadow-sm">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-semibold rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              <i class="fa fa-mountain me-2 text-dark"></i> Suelos
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-light bg-opacity-50">
+              <strong class="d-block mb-2 text-dark">4. Erosión del Suelo: </strong>
+              <p>Los animales, al deambular por diversas áreas sin supervisión, pueden contribuir a la erosión del suelo. En particular, los perros y otros animales de mayor tamaño pueden alterar la vegetación y compactar el suelo al caminar sobre él, lo que puede llevar a la pérdida de cobertura vegetal y a la degradación del suelo.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item border border-light-subtle rounded-3 mb-3 shadow-sm">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-semibold rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              <i class="fa fa-leaf me-2 text-success"></i> Biodiversidad
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-light bg-opacity-50">
+              <strong class="d-block mb-2 text-success">5. Impacto en la Biodiversidad: </strong>
+              <p>La presencia de animales callejeros puede tener un impacto negativo sobre la biodiversidad local. Esto se debe a su capacidad para alterar la estructura de las poblaciones animales y vegetales locales, generando cambios en las comunidades ecológicas y afectando la conservación de especies amenazadas o en peligro de extinción.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item border border-light-subtle rounded-3 mb-3 shadow-sm">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-semibold rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+              <i class="fa fa-tint me-2 text-info"></i> Recursos
+            </button>
+          </h2>
+          <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-light bg-opacity-50">
+              <strong class="d-block mb-2 text-info">6. Consumo de Recursos: </strong>
+              <p>Los animales en estado de calle requieren de recursos como agua y comida, y al estar en las ciudades, pueden competir con los seres humanos por estos mismos recursos, lo que podría generar conflictos y contribuir al mal manejo de los recursos naturales. Además, los animales callejeros suelen estar mal alimentados y en condiciones de salud precarias, lo que puede requerir intervenciones de bienestar animal y gastar recursos en su atención.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item border border-light-subtle rounded-3 mb-3 shadow-sm">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-semibold rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+              <i class="fa fa-cloud me-2 text-secondary"></i> Emisión de gases
+            </button>
+          </h2>
+          <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-light bg-opacity-50">
+              <strong class="d-block mb-2 text-secondary">7. Emisiones de Gases de Efecto Invernadero: </strong>
+              <p>Aunque no es el factor principal, la acumulación de animales callejeros en áreas urbanas podría estar relacionada con la gestión inadecuada de residuos. Al haber más animales que generan desechos orgánicos, se podría generar más metano, un gas de efecto invernadero, al descomponerse la materia orgánica en vertederos o áreas no controladas.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item border border-light-subtle rounded-3 mb-3 shadow-sm">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-semibold rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+              <i class="fa fa-city me-2 text-primary"></i> Conflictos y alteración
+            </button>
+          </h2>
+          <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-light bg-opacity-50">
+              <strong class="d-block mb-2 text-primary">8. Problemas Sociales y Urbanos: </strong>
+              <p>Los animales errantes también pueden generar problemas sociales, ya que su presencia puede generar accidentes de tráfico, ataques a personas o mascotas, e incluso generar tensiones entre las personas que defienden los derechos de los animales y aquellos que prefieren que se eliminen. Esto puede llevar a conflictos en la gestión del espacio urbano, lo que implica también una ineficiente utilización de recursos y planificación urbana.</p>
+              
+              <div class="mt-4 p-3 bg-primary bg-opacity-10 rounded-3 border-start border-4 border-primary">
+                <h4 class="fw-bold mb-3 text-primary">Conclusión</h4>
+                <p>El impacto de los animales en estado de calle en el medio ambiente es multifacético y complejo. Su presencia afecta tanto a los ecosistemas naturales como a la calidad de vida urbana, la salud pública, la biodiversidad, y el manejo de residuos. Para mitigar estos efectos negativos, se requieren políticas públicas enfocadas en la educación sobre tenencia responsable de mascotas, programas de esterilización, y sistemas adecuados de control y protección animal. De esta manera, se podrá reducir el impacto ambiental de los animales callejeros y promover un entorno más equilibrado y sostenible.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-5">
+        <a href="#" class="btn btn-primary btn-lg px-4">¡Adopta una mascota!</a>
+        <p class="text-muted mt-3">Juntos podemos hacer la diferencia</p>
+      </div>
+    </section>
+    <footer class="container">
+    </footer>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

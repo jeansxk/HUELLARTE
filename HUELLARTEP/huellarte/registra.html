@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Huellarte</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://kit.fontawesome.com/923b6588de.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<header>
+  <div>
+  <nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html#"><img src="media/logo.png" width="200px" height="150px" alt="Huellarte Logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 Mimenu">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item Mimenu">
+            <a class="nav-link" href="Servicio.html">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Fundaciones.html">Fundaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Bienestar.html">Bienestar Animal</a>
+            <li class="nav-item">
+              <a class="nav-link" aria-disabled="true" href="index.html#Contacto">Contáctenos</a>
+          </li>
+          </li> 
+           <li class="nav-item Mimenu">
+            <a class="nav-link" href="index.html#Nosotros">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<body class="bg-light">
+  <div class="container py-5">
+      <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6">
+              <div class="card border-0 shadow-lg rounded-3 overflow-hidden">
+                  <div class="card-header bg-primary text-white text-center py-4">
+                      <h4 class="mb-0"><i class="fas fa-user-plus me-2"></i>Crear Cuenta</h4>
+                  </div>
+                  <div class="card-body p-4">
+                      <div class="text-center mb-4">
+                          <span class="badge bg-primary bg-opacity-10 text-primary fs-6 px-3 py-2 rounded-pill">¡Únete a nuestra comunidad!</span>
+                      </div>
+                      
+                      <!-- Área de alertas -->
+                      <div id="mensaje"></div>
+                      
+                      <form id="registrationForm" action="registro.php" method="POST">
+                          <div class="row g-3">
+                              <div class="col-md-6">
+                                  <div class="form-floating mb-3">
+                                      <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Nombres" required>
+                                      <label for="nombres"><i class="fas fa-user text-muted me-2"></i>Nombres</label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-floating mb-3">
+                                      <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+                                      <label for="apellidos"><i class="fas fa-user text-muted me-2"></i>Apellidos</label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="row g-3">
+                              <div class="col-md-6">
+                                  <div class="form-floating mb-3">
+                                      <select class="form-control" id="idTipodoc" name="idTipodoc" required>
+                                          <option value="">Seleccionar...</option>
+                                          <option value="1">Cédula de Ciudadanía</option>
+                                          <option value="2">Tarjeta de Identidad</option>
+                                          <option value="3">Cédula de Extranjería</option>
+                                          <option value="4">Pasaporte</option>
+                                      </select>
+                                      <label for="idTipodoc"><i class="fas fa-id-card text-muted me-2"></i>Tipo de Documento</label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-floating mb-3">
+                                      <input type="text" class="form-control" id="numeroDocumento" name="numeroDocumento" placeholder="Número de documento" required>
+                                      <label for="numeroDocumento"><i class="fas fa-hashtag text-muted me-2"></i>Número de Documento</label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="form-floating mb-3">
+                              <input type="email" class="form-control" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+                              <label for="correo"><i class="fas fa-envelope text-muted me-2"></i>Correo electrónico</label>
+                          </div>
+                          
+                          <div class="form-floating mb-3">
+                              <input type="tel" class="form-control" id="celular" name="celular" placeholder="Celular" required>
+                              <label for="celular"><i class="fas fa-phone text-muted me-2"></i>Celular</label>
+                          </div>
+                          
+                          <div class="row g-3">
+                              <div class="col-md-6">
+                                  <div class="form-floating mb-3">
+                                      <select class="form-control" id="idDepartamento" name="idDepartamento" required>
+                                          <option value="">Seleccionar...</option>
+                                          <option value="1">Antioquia</option>
+                                          <option value="2">Bogotá D.C.</option>
+                                          <option value="3">Valle del Cauca</option>
+                                          <option value="4">Atlántico</option>
+                                          <option value="5">Santander</option>
+                                          <!-- Agregar más departamentos según sea necesario -->
+                                      </select>
+                                      <label for="idDepartamento"><i class="fas fa-map-marker-alt text-muted me-2"></i>Departamento</label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-floating mb-3">
+                                      <select class="form-control" id="idCiudad" name="idCiudad" required>
+                                          <option value="">Seleccionar...</option>
+                                          <option value="1">Medellín</option>
+                                          <option value="2">Bogotá</option>
+                                          <option value="3">Cali</option>
+                                          <option value="4">Barranquilla</option>
+                                          <option value="5">Bucaramanga</option>
+                                          <!-- Agregar más ciudades según sea necesario -->
+                                      </select>
+                                      <label for="idCiudad"><i class="fas fa-city text-muted me-2"></i>Ciudad</label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="form-floating mb-3">
+                              <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                              <label for="contrasena"><i class="fas fa-lock text-muted me-2"></i>Contraseña</label>
+                              <div class="form-text">Mínimo 6 caracteres</div>
+                          </div>
+                          
+                          <div class="form-floating mb-4">
+                              <input type="password" class="form-control" id="confirmarPassword" name="confirmarPassword" placeholder="Confirmar contraseña" required>
+                              <label for="confirmarPassword"><i class="fas fa-lock text-muted me-2"></i>Confirmar contraseña</label>
+                          </div>
+                          
+                          <div class="mb-4">
+                              <div class="d-flex justify-content-between align-items-center">
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="terminos" required>
+                                      <label class="form-check-label" for="terminos">
+                                          Acepto los <a href="#" class="text-decoration-none">términos y condiciones</a>
+                                      </label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="d-grid">
+                              <button type="submit" class="btn btn-primary btn-lg py-3" id="btnRegistrar">
+                                  <i class="fas fa-user-plus me-2"></i>Registrarme ahora
+                              </button>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="card-footer bg-white py-3 border-0">
+                      <div class="text-center">
+                          <p class="mb-0">¿Ya tienes una cuenta? <a href="#" class="text-decoration-none">Iniciar sesión</a></p>
+                      </div>
+                      
+                      <hr class="my-4">
+                      
+                      <div class="d-flex justify-content-center gap-3">
+                          <button class="btn btn-outline-primary rounded-circle"><i class="fab fa-facebook-f"></i></button>
+                          <button class="btn btn-outline-danger rounded-circle"><i class="fab fa-google"></i></button>
+                          <button class="btn btn-outline-dark rounded-circle"><i class="fab fa-apple"></i></button>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="text-center mt-4 text-muted">
+                  <small>© 2025 Huellarte. Todos los derechos reservados.</small>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+  document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const btnRegistrar = document.getElementById('btnRegistrar');
+      const originalText = btnRegistrar.innerHTML;
+      
+      // Cambiar botón a estado de carga
+      btnRegistrar.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Registrando...';
+      btnRegistrar.disabled = true;
+      
+      const formData = new FormData(this);
+      
+      // Validaciones adicionales del lado del cliente
+      const contrasena = document.getElementById('contrasena').value;
+      const confirmarPassword = document.getElementById('confirmarPassword').value;
+      
+      if (contrasena !== confirmarPassword) {
+          mostrarMensaje('Las contraseñas no coinciden', 'danger');
+          btnRegistrar.innerHTML = originalText;
+          btnRegistrar.disabled = false;
+          return;
+      }
+      
+      if (contrasena.length < 6) {
+          mostrarMensaje('La contraseña debe tener al menos 6 caracteres', 'danger');
+          btnRegistrar.innerHTML = originalText;
+          btnRegistrar.disabled = false;
+          return;
+      }
+      
+      try {
+          const response = await fetch('registro.php', {
+              method: 'POST',
+              body: formData
+          });
+          
+          const data = await response.json();
+          
+          if (data.success) {
+              mostrarMensaje(data.message, 'success');
+              this.reset();
+              // Opcional: redirigir después de un registro exitoso
+              setTimeout(() => {
+                  window.location.href = 'login.html'; // o donde quieras redirigir
+              }, 2000);
+          } else {
+              mostrarMensaje(data.message, 'danger');
+          }
+          
+      } catch (error) {
+          console.error('Error:', error);
+          mostrarMensaje('Error de conexión. Por favor, intente nuevamente.', 'danger');
+      } finally {
+          // Restaurar botón
+          btnRegistrar.innerHTML = originalText;
+          btnRegistrar.disabled = false;
+      }
+  });
+  
+  function mostrarMensaje(mensaje, tipo) {
+      const mensajeDiv = document.getElementById('mensaje');
+      mensajeDiv.innerHTML = `
+          <div class="alert alert-${tipo} alert-dismissible fade show" role="alert">
+              ${mensaje}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+      `;
+      
+      // Auto-ocultar después de 5 segundos
+      setTimeout(() => {
+          const alert = mensajeDiv.querySelector('.alert');
+          if (alert) {
+              const bsAlert = new bootstrap.Alert(alert);
+              bsAlert.close();
+          }
+      }, 5000);
+  }
+  
+  // Validación en tiempo real de confirmación de contraseña
+  document.getElementById('confirmarPassword').addEventListener('input', function() {
+      const contrasena = document.getElementById('contrasena').value;
+      const confirmarPassword = this.value;
+      
+      if (confirmarPassword && contrasena !== confirmarPassword) {
+          this.setCustomValidity('Las contraseñas no coinciden');
+          this.classList.add('is-invalid');
+      } else {
+          this.setCustomValidity('');
+          this.classList.remove('is-invalid');
+      }
+  });
+  </script>
+</body>
+</html>

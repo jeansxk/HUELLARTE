@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://kit.fontawesome.com/923b6588de.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html#"><img src="media/logo.png" width="200px" height="150px" alt="Huellarte Logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 Mimenu">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item Mimenu">
+              <a class="nav-link" href="Servicio.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Fundaciones.html">Fundaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Bienestar.html">Bienestar Animal</a>
+              <li class="nav-item">
+                <a class="nav-link" aria-disabled="true" href="index.html#Contacto">Contáctenos</a>
+            </li>
+            </li> 
+             <li class="nav-item Mimenu">
+              <a class="nav-link" href="index.html#Nosotros">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow">
+          <div class="modal-header bg-primary bg-gradient text-white">
+            <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Ingresar</h1>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-center mb-4">
+              <img src="media/logo.png" alt="Huellarte Logo" width="250px" height="180px" class="img-fluid rounded shadow-sm">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label fw-semibold"><i class="bi bi-envelope me-2"></i>Correo Electrónico</label>
+              <input type="email" class="form-control border-primary" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="passwordInput" class="form-label fw-semibold"><i class="bi bi-lock me-2"></i>Contraseña</label>
+              <input type="password" class="form-control border-primary" id="passwordInput" placeholder="Contraseña">
+            </div>
+            <div class="text-center mt-4">
+              <p>¿Todavía no te has registrado? <a href="registra.html" class="btn btn-sm btn-outline-primary ms-2 fw-bold">REGISTRATE</a></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary fw-semibold" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary fw-semibold">Ingresar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección de Servicios Mejorada -->
+  <div class="container-fluid section-padding" id="Servicios">
+    <div class="container">
+      <h2 class="Mititulo quicksand">Nuestros Servicios</h2>
+      <p class="text-center mb-4">Comprometidos con el bienestar animal, ofrecemos soluciones integrales para conectar mascotas perdidas con sus familias y brindar apoyo a animales sin hogar.</p>
+      <p class="text-center mb-5"><b>Huellarte</b> presta los siguientes servicios</p>
+      
+      <!-- Contador de estadísticas -->
+      <div class="row stats-container mb-5">
+        <div class="col-md-3 col-6 text-center">
+          <div class="counter-value">1,250+</div>
+          <div class="counter-label">Mascotas reunidas</div>
+        </div>
+        <div class="col-md-3 col-6 text-center">
+          <div class="counter-value">850+</div>
+          <div class="counter-label">Adopciones exitosas</div>
+        </div>
+        <div class="col-md-3 col-6 text-center">
+          <div class="counter-value">45+</div>
+          <div class="counter-label">Clínicas asociadas</div>
+        </div>
+        <div class="col-md-3 col-6 text-center">
+          <div class="counter-value">3,200+</div>
+          <div class="counter-label">Usuarios activos</div>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center">
+        <!-- Primer grupo de tarjetas -->
+        <div class="col-md-4 col-sm-12 mb-4">
+          <div class="card text-center h-100">
+            <span class="badge-feature">Popular</span>
+            <img src="media/perfiles.jpg" class="card-img-top" alt="Lista de mascotas encontradas">
+            <div class="card-body">
+              <div class="service-icon">
+                <i class="fas fa-camera fa-2x"></i>
+              </div>
+              <h4 class="card-title">Perfiles para mascotas perdidas</h4>
+              <p class="card-text">Crea perfiles con fotos, características físicas y ubicación del último avistamiento. Comparte automáticamente en redes sociales y recibe alertas.</p>
+              <a href="#" class="btn btn-service text-white">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-4">
+          <div class="card text-center h-100">
+            <img src="media/lista.jpg" class="card-img-top" alt="Lista de mascotas encontradas">
+            <div class="card-body">
+              <div class="service-icon">
+                <i class="fas fa-magnifying-glass fa-2x"></i>
+              </div>
+              <h4 class="card-title">Lista de mascotas encontradas</h4>
+              <p class="card-text">Consulta nuestra base de datos actualizada con filtros por especie, raza, color y ubicación. Recibe notificaciones automáticas cuando aparezca una mascota similar a la tuya.</p>
+              <a href="#" class="btn btn-service text-white">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-4">
+          <div class="card text-center h-100">
+            <span class="badge-feature">Nuevo</span>
+            <img src="media/clinica.jpg" class="card-img-top" alt="Listados de clínicas">
+            <div class="card-body">
+              <div class="service-icon">
+                <i class="fas fa-syringe fa-2x"></i>
+              </div>
+              <h4 class="card-title">Listados de clínicas</h4>
+              <p class="card-text">Encuentra veterinarias cercanas con información de horarios, servicios especializados, valoraciones y precios. Incluye opciones de clínicas con servicio de emergencia 24/7.</p>
+              <a href="#" class="btn btn-service text-white">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonio -->
+      <div class="testimonial-card">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <p class="mb-3 fst-italic">"Gracias a Huellarte pude encontrar a mi perrito Max después de 2 semanas desaparecido. La plataforma me ayudó a crear un perfil detallado y recibí una alerta cuando alguien lo vio. No podría estar más agradecida por este servicio."</p>
+            <p class="text-end mb-0"><strong>María González</strong> - Usuario desde 2023</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Segundo grupo de tarjetas -->
+      <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-12 mb-4">
+          <div class="card text-center h-100">
+            <img src="media/adopcion.jpg" class="card-img-top" alt="Adopción de Mascotas">
+            <div class="card-body">
+              <div class="service-icon">
+                <i class="fas fa-paw fa-2x"></i>
+              </div>
+              <h4 class="card-title">Adopción de Mascotas</h4>
+              <p class="card-text">Conecta con animales que buscan hogar a través de perfiles detallados con historial médico y temperamento. Filtra por especie, tamaño, edad y compatibilidad con tu estilo de vida.</p>
+              <a href="#" class="btn btn-service text-white">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-4">
+          <div class="card text-center h-100">
+            <img src="media/paso.jpg" class="card-img-top" alt="Hogares de Paso">
+            <div class="card-body">
+              <div class="service-icon">
+                <i class="fas fa-home fa-2x"></i>
+              </div>
+              <h4 class="card-title">Hogares de Paso</h4>
+              <p class="card-text">Forma parte de nuestra red de hogares temporales para animales en recuperación. Recibe apoyo en alimentación, atención veterinaria y capacitación para cuidados específicos.</p>
+              <a href="#" class="btn btn-service text-white">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-4">
+          <div class="card text-center h-100">
+            <span class="badge-feature">Destacado</span>
+            <img src="media/apa.jpg" class="card-img-top" alt="Apadrinamientos">
+            <div class="card-body">
+              <div class="service-icon">
+                <i class="fas fa-dollar fa-2x"></i>
+              </div>
+              <h4 class="card-title">Apadrinamientos</h4>
+              <p class="card-text">Contribuye al bienestar de animales en refugios mediante donaciones periódicas. Recibe actualizaciones mensuales con fotos y reportes sobre la evolución de tu apadrinado.</p>
+              <a href="#" class="btn btn-service text-white">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts de Bootstrap y animaciones -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
