@@ -1,29 +1,26 @@
 <?php
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
-require_once 'conexion.php';
-
-
+require_once __DIR__ . '/conexion.php';  
 error_log("=== INICIO REGISTRO ===");
 error_log("POST data: " . print_r($_POST, true));
 
 if ($_POST) {
-    
     $nombres = trim($_POST['nombres']);
     $apellidos = trim($_POST['apellidos']);
     $correo = trim($_POST['correo']);
     $celular = trim($_POST['celular']);
     $contrasena = $_POST['contrasena'];
     $confirmarPassword = $_POST['confirmarPassword'];
-    
-    
+
     $idTipodoc = $_POST['idTipodoc'];
     $numeroDocumento = trim($_POST['numeroDocumento']);
     $idDepartamento = $_POST['idDepartamento'];
     $idCiudad = $_POST['idCiudad'];
-    
-    
+
     $idTipousuario = 16; 
+ 
+
     
     error_log("Datos procesados:");
     error_log("nombres: " . $nombres);

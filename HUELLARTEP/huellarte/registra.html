@@ -59,10 +59,9 @@
                           <span class="badge bg-primary bg-opacity-10 text-primary fs-6 px-3 py-2 rounded-pill">¡Únete a nuestra comunidad!</span>
                       </div>
                       
-                     
                       <div id="mensaje"></div>
                       
-                      <form id="registrationForm" action="registro.php" method="POST">
+                      <form id="registrationForm" action="../CONTROLADOR/PHP/registro.php" method="POST">
                           <div class="row g-3">
                               <div class="col-md-6">
                                   <div class="form-floating mb-3">
@@ -185,22 +184,13 @@
   <script>
   // =========== CARGA DINÁMICA DE DEPARTAMENTOS Y CIUDADES ===========
   document.addEventListener('DOMContentLoaded', function() {
-      console.log('DOM cargado, iniciando aplicación...');
-      
-      // Cargar departamentos al cargar la página
       cargarDepartamentos();
       
-      
       document.getElementById('idDepartamento').addEventListener('change', function() {
-          console.log('=== CAMBIO DE DEPARTAMENTO ===');
-          console.log('Valor seleccionado:', this.value);
-          console.log('Texto seleccionado:', this.options[this.selectedIndex].text);
-          
           const idDepartamento = this.value;
           const selectCiudad = document.getElementById('idCiudad');
           
           if (idDepartamento) {
-              console.log('Cargando ciudades para departamento:', idDepartamento);
               cargarCiudades(idDepartamento);
           } else {
               selectCiudad.innerHTML = '<option value="">Selecciona un departamento primero</option>';
@@ -211,78 +201,43 @@
   
   // Función para cargar departamentos
   async function cargarDepartamentos() {
-      console.log('=== CARGANDO DEPARTAMENTOS ===');
       const selectDepartamento = document.getElementById('idDepartamento');
-      
       try {
           selectDepartamento.innerHTML = '<option value="">Cargando departamentos...</option>';
-          
-          const response = await fetch('cargar_departamento.php');
-          console.log('Response status departamentos:', response.status);
-          
+          const response = await fetch('../CONTROLADOR/PHP/cargar_departamento.php');
           const data = await response.json();
-          console.log('Datos departamentos recibidos:', data);
-          
           if (data.success) {
               selectDepartamento.innerHTML = '<option value="">Seleccionar departamento...</option>';
-              data.data.forEach((dept, index) => {
-                  console.log(`Departamento ${index + 1}:`, dept);
-                  
+              data.data.forEach(dept => {
                   selectDepartamento.innerHTML += `<option value="${dept.idDepartamento}">${dept.descripcion}</option>`;
               });
-              console.log('Departamentos cargados exitosamente');
           } else {
               selectDepartamento.innerHTML = '<option value="">Error al cargar departamentos</option>';
-              console.error('Error del servidor:', data.message);
           }
       } catch (error) {
-          console.error('Error al cargar departamentos:', error);
           selectDepartamento.innerHTML = '<option value="">Error de conexión</option>';
       }
   }
   
   // Función para cargar ciudades
   async function cargarCiudades(idDepartamento) {
-      console.log('=== CARGANDO CIUDADES ===');
-      console.log('ID Departamento recibido:', idDepartamento);
-      console.log('Tipo:', typeof idDepartamento);
-      
       const selectCiudad = document.getElementById('idCiudad');
-      
       try {
-          
           selectCiudad.innerHTML = '<option value="">Cargando ciudades...</option>';
           selectCiudad.disabled = true;
-          
-         
-          const url = `cargar_ciudad.php?idDepartamento=${idDepartamento}`;
-          console.log('URL llamada:', url);
-          
+          const url = `../CONTROLADOR/PHP/cargar_ciudad.php?idDepartamento=${idDepartamento}`;
           const response = await fetch(url);
-          console.log('Response status ciudades:', response.status);
-          
           const data = await response.json();
-          console.log('Datos ciudades recibidos:', data);
-          
           if (data.success) {
-              console.log(`SUCCESS: ${data.data.length} ciudades encontradas`);
               selectCiudad.innerHTML = '<option value="">Seleccionar ciudad...</option>';
-              
-              data.data.forEach((ciudad, index) => {
-                  console.log(`Ciudad ${index + 1}:`, ciudad);
+              data.data.forEach(ciudad => {
                   selectCiudad.innerHTML += `<option value="${ciudad.idCiudad}">${ciudad.descripcion}</option>`;
               });
-              
               selectCiudad.disabled = false;
-              console.log('Ciudades cargadas exitosamente');
           } else {
-              console.log('No se encontraron ciudades:', data.message);
-              console.log('Debug info:', data.debug);
               selectCiudad.innerHTML = '<option value="">No hay ciudades disponibles</option>';
-              selectCiudad.disabled = true;
           }
       } catch (error) {
-          console.error('Error al cargar ciudades:', error);
           selectCiudad.innerHTML = '<option value="">Error al cargar ciudades</option>';
           selectCiudad.disabled = true;
       }
@@ -295,13 +250,10 @@
       const btnRegistrar = document.getElementById('btnRegistrar');
       const originalText = btnRegistrar.innerHTML;
       
-      
       btnRegistrar.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Registrando...';
       btnRegistrar.disabled = true;
       
       const formData = new FormData(this);
-      
-      
       const contrasena = document.getElementById('contrasena').value;
       const confirmarPassword = document.getElementById('confirmarPassword').value;
       
@@ -311,7 +263,6 @@
           btnRegistrar.disabled = false;
           return;
       }
-      
       if (contrasena.length < 6) {
           mostrarMensaje('La contraseña debe tener al menos 6 caracteres', 'danger');
           btnRegistrar.innerHTML = originalText;
@@ -320,36 +271,24 @@
       }
       
       try {
-          const response = await fetch('registro.php', {
+          const response = await fetch('../CONTROLADOR/PHP/registro.php', {
               method: 'POST',
               body: formData
           });
-          
           const data = await response.json();
-          
           if (data.success) {
               mostrarMensaje(data.message, 'success');
               this.reset();
-              
-              // Resetear los selects
               document.getElementById('idDepartamento').value = '';
               document.getElementById('idCiudad').innerHTML = '<option value="">Selecciona un departamento primero</option>';
               document.getElementById('idCiudad').disabled = true;
-              
-              7
-              
-              setTimeout(() => {
-                    window.location.href = 'index.html';
-              }, 2000);
+              setTimeout(() => { window.location.href = 'index.html'; }, 2000);
           } else {
               mostrarMensaje(data.message, 'danger');
           }
-          
       } catch (error) {
-          console.error('Error:', error);
           mostrarMensaje('Error de conexión. Por favor, intente nuevamente.', 'danger');
       } finally {
-          // Restaurar botón
           btnRegistrar.innerHTML = originalText;
           btnRegistrar.disabled = false;
       }
@@ -363,8 +302,6 @@
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
       `;
-      
- 
       setTimeout(() => {
           const alert = mensajeDiv.querySelector('.alert');
           if (alert) {
@@ -373,10 +310,10 @@
           }
       }, 5000);
   }
-    document.getElementById('confirmarPassword').addEventListener('input', function() {
+  
+  document.getElementById('confirmarPassword').addEventListener('input', function() {
       const contrasena = document.getElementById('contrasena').value;
       const confirmarPassword = this.value;
-      
       if (confirmarPassword && contrasena !== confirmarPassword) {
           this.setCustomValidity('Las contraseñas no coinciden');
           this.classList.add('is-invalid');

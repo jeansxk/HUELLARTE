@@ -2,9 +2,9 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-require_once 'conexion.php';
+require_once __DIR__ . '/conexion.php';   // ✅ Ruta corregida
+
 try {
-    
     if (!isset($_GET['idDepartamento']) || empty($_GET['idDepartamento'])) {
         echo json_encode([
             'success' => false,
@@ -15,14 +15,12 @@ try {
     
     $idDepartamento = intval($_GET['idDepartamento']);
     
-    
     $sql = "SELECT idCiudad, descripcion FROM ciudad WHERE idDepartamento = :idDepartamento ORDER BY descripcion ASC";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':idDepartamento', $idDepartamento, PDO::PARAM_INT);
     $stmt->execute();
     
     $ciudades = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
     
     if ($ciudades) {
         echo json_encode([

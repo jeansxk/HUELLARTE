@@ -1,16 +1,15 @@
 <?php
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
- 
-require_once 'conexion.php';
+
+require_once __DIR__ . '/conexion.php';   // ✅ Ruta corregida
+
 try {
-    
     $sql = "SELECT idDepartamento, descripcion FROM departamento ORDER BY descripcion ASC";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     
     $departamentos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
     
     if ($departamentos) {
         echo json_encode([
