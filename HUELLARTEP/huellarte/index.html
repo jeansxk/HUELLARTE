@@ -12,79 +12,88 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
   
-  
+<!-- Estilos adicionales para mejorar responsividad -->
+    <style>
+    /* Mostrar dropdown al pasar el mouse en pantallas grandes */
+    @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    }
+
+    .container-bienestar {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+        .accordion-button {
+            font-size: 0.95rem;
+            padding: 0.75rem 1rem;
+        }
+
+        .fs-4 {
+            font-size: 1.1rem !important;
+        }
+
+        .display-5 {
+            font-size: 1.8rem !important;
+        }
+    }
+</style>
 
 </head>
-
 <body>
-
-  <header>
-    <nav class="navbar navbar-expand-lg bg-primary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html#"><img src="media/logo.png" width="200px" height="150px" alt="Huellarte Logo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 Mimenu">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item Mimenu">
-              <a class="nav-link" href="Servicio.html">Servicios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Fundaciones.html">Fundaciones</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Bienestar.html">Bienestar Animal</a>
-            </li> 
-            <li class="nav-item">
-              <a class="nav-link" aria-disabled="true" href="index.html#Contacto">Contáctenos</a>
-          </li>
-             <li class="nav-item Mimenu">
-              <a class="nav-link" href="index.html#Nosotros">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content shadow">
-          <div class="modal-header bg-primary bg-gradient text-white">
-            <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Ingresar</h1>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="index.html#">
+                  <img src="media/logo.png" width="200px" height="150px" />
+              </a>
+            
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                  <!-- Menú izquierdo -->
+                  <ul class="navbar-nav mb-2 mb-lg-0">
+                      <!-- Dropdown Inicio -->
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="inicioDropdown" role="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              Inicio
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="inicioDropdown">
+                             <li><a class="dropdown-item" href="index.html">Pagina principal</a></li>
+                              <li><a class="dropdown-item" href="index.html#Contacto">Contáctenos</a></li>
+                              <li><a class="dropdown-item" href="index.html#Nosotros">Nosotros</a></li>
+                          </ul>
+                      </li>
+                    
+                      <li class="nav-item">
+                          <a class="nav-link" href="Servicio.html">Servicios</a>
+                      </li>
+                    
+                      <li class="nav-item">
+                          <a class="nav-link" href="Fundaciones.html">Fundaciones</a>
+                      </li>
+                    
+                      <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="Bienestar.html">Bienestar Animal</a>
+                      </li>
+                  </ul>
+                
+                  <!-- Botón Ingresar a la derecha -->
+                  <ul class="navbar-nav mb-2 mb-lg-0">
+                      <li class="nav-item"><a class="nav-link" href="login.html">Ingresar</a></li>
+                  </ul>
+              </div>
           </div>
-          <div class="modal-body">
-            <div class="d-flex justify-content-center mb-4">
-              <img src="media/logo.png" alt="Huellarte Logo" width="250px" height="180px" class="img-fluid rounded shadow-sm">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label fw-semibold"><i class="bi bi-envelope me-2"></i>Correo Electrónico</label>
-              <input type="email" class="form-control border-primary" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="passwordInput" class="form-label fw-semibold"><i class="bi bi-lock me-2"></i>Contraseña</label>
-              <input type="password" class="form-control border-primary" id="passwordInput" placeholder="Contraseña">
-            </div>
-            <div class="text-center mt-4">
-              <p>¿Todavía no te has registrado? <a href="registra.html" class="btn btn-sm btn-outline-primary ms-2 fw-bold">REGISTRATE</a></p>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary fw-semibold" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary fw-semibold">Ingresar</button>
-          </div>
-        </div>
-      </div>
-    </div> 
-  </header>
+      </nav>
+    </header>
 
   <section>
     <!-- Carousel -->
@@ -235,7 +244,7 @@
       <h2 class="Mititulo quicksand">Contáctenos</h2>
       <div class="row">
         <div class="col-md-8 col-sm-12 mb-4">
-          <h3 class="text-center mb-4">Formulario de Contacto</h3>
+          
           
           <form>
             <div class="mb-3">
