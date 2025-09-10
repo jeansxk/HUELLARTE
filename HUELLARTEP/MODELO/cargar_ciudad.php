@@ -2,7 +2,8 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-require_once __DIR__ . '/conexion.php';   // ✅ Ruta corregida
+// CAMBIO: Ruta corregida - este archivo está en MODELO, por lo tanto la conexión está en la misma carpeta
+require_once __DIR__ . '/conexion.php';
 
 try {
     if (!isset($_GET['idDepartamento']) || empty($_GET['idDepartamento'])) {

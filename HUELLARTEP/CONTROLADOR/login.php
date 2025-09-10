@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once __DIR__ . '/conexion.php';
+// CAMBIO 1: Ruta corregida para conexión.php en la carpeta MODELO
+require_once __DIR__ . '/../MODELO/conexion.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
@@ -22,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Login exitoso
                 $_SESSION['usuario_id'] = $usuario['idUsuario'];
                 $_SESSION['usuario_nombre'] = $usuario['nombres'];
-                header("Location: ../../huellarte/index.html");
+                // CAMBIO 2: Ruta corregida para index.html en la carpeta VISTA
+                header("Location: ../VISTA/index.html");
                 exit;
             } else {
                 echo "<script>alert('Contraseña incorrecta'); window.history.back();</script>";
@@ -37,3 +39,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     echo "<script>alert('Método no permitido'); window.history.back();</script>";
 }
+?>

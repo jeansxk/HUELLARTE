@@ -49,7 +49,8 @@
               <h3 class="fw-bold mt-3">Bienvenido</h3>
               <p class="text-muted">Inicia sesión para continuar</p>
             </div>
-           <form action="../CONTROLADOR/PHP/login.php" method="POST">
+           <!-- CAMBIO 1: Action corregido para apuntar a CONTROLADOR -->
+           <form action="../CONTROLADOR/login.php" method="POST">
      <div class="mb-3">
     <label for="email" class="form-label fw-semibold"><i class="fas fa-envelope me-2"></i>Correo</label>
     <input type="email" id="email" name="email" class="form-control" placeholder="correo@ejemplo.com" required>
@@ -62,7 +63,8 @@
                 <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
               </div>
   <button type="submit" class="btn btn-primary w-100 fw-bold">Ingresar</button>
-  <a href="../huellarte/index.html" class="btn btn-outline-secondary w-100 mt-2"><i class="fas fa-home me-2"></i>Volver a Inicio</a>
+  <!-- CAMBIO 2: Ruta corregida para volver a inicio -->
+  <a href="index.html" class="btn btn-outline-secondary w-100 mt-2"><i class="fas fa-home me-2"></i>Volver a Inicio</a>
 </form>
 
             <div class="text-center mt-4">

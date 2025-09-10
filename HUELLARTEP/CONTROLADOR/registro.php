@@ -1,7 +1,8 @@
 <?php
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
-require_once __DIR__ . '/conexion.php';
+// CAMBIO: Ruta corregida para conexión.php en la carpeta MODELO
+require_once __DIR__ . '/../MODELO/conexion.php';
 session_start();
 
 if ($_POST) {
@@ -68,3 +69,4 @@ if ($_POST) {
 } else {
     echo json_encode(['success' => false, 'message' => 'Método no permitido']);
 }
+?>

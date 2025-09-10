@@ -106,7 +106,8 @@
                       
                       <div id="mensaje"></div>
                       
-                      <form id="registrationForm" action="../CONTROLADOR/PHP/registro.php" method="POST">
+                      <!-- CAMBIO 1: Action corregido para apuntar a CONTROLADOR -->
+                      <form id="registrationForm" action="../CONTROLADOR/registro.php" method="POST">
                           <div class="row g-3">
                               <div class="col-md-6">
                                   <div class="form-floating mb-3">
@@ -244,12 +245,12 @@
       });
   });
   
-  // Función para cargar departamentos
+  // CAMBIO 2: Función para cargar departamentos con ruta corregida
   async function cargarDepartamentos() {
       const selectDepartamento = document.getElementById('idDepartamento');
       try {
           selectDepartamento.innerHTML = '<option value="">Cargando departamentos...</option>';
-          const response = await fetch('../CONTROLADOR/PHP/cargar_departamento.php');
+          const response = await fetch('../MODELO/cargar_departamento.php');
           const data = await response.json();
           if (data.success) {
               selectDepartamento.innerHTML = '<option value="">Seleccionar departamento...</option>';
@@ -264,13 +265,13 @@
       }
   }
   
-  // Función para cargar ciudades
+  // CAMBIO 3: Función para cargar ciudades con ruta corregida
   async function cargarCiudades(idDepartamento) {
       const selectCiudad = document.getElementById('idCiudad');
       try {
           selectCiudad.innerHTML = '<option value="">Cargando ciudades...</option>';
           selectCiudad.disabled = true;
-          const url = `../CONTROLADOR/PHP/cargar_ciudad.php?idDepartamento=${idDepartamento}`;
+          const url = `../MODELO/cargar_ciudad.php?idDepartamento=${idDepartamento}`;
           const response = await fetch(url);
           const data = await response.json();
           if (data.success) {
@@ -288,7 +289,7 @@
       }
   }
 
-  // =========== MANEJO DEL FORMULARIO DE REGISTRO ===========
+  // CAMBIO 4: Manejo del formulario de registro con ruta corregida
   document.getElementById('registrationForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       
@@ -316,7 +317,7 @@
       }
       
       try {
-          const response = await fetch('../CONTROLADOR/PHP/registro.php', {
+          const response = await fetch('../CONTROLADOR/registro.php', {
               method: 'POST',
               body: formData
           });
