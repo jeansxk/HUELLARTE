@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Mascotas Encontradas - Huellarte</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/923b6588de.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="media/logo.png" width="200px" height="150px" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="inicioDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Inicio
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="inicioDropdown">
+                                <li><a class="dropdown-item" href="index.html">Página principal</a></li>
+                                <li><a class="dropdown-item" href="index.html#Contacto">Contáctenos</a></li>
+                                <li><a class="dropdown-item" href="index.html#Nosotros">Nosotros</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Servicio.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Fundaciones.html">Fundaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Bienestar.html">Bienestar Animal</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="login.html">Ingresar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="bg-info bg-opacity-10 py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold text-primary mb-3">Lista de Mascotas Encontradas</h1>
+                    <p class="lead text-muted mb-4">Consulta nuestra base de datos actualizada y encuentra a tu mascota perdida con nuestros filtros avanzados</p>
+                    <div class="d-flex gap-2">
+                        <span class="badge bg-success fs-6 px-3 py-2">Base de datos actualizada</span>
+                        <span class="badge bg-info fs-6 px-3 py-2">Filtros inteligentes</span>
+                        <span class="badge bg-warning fs-6 px-3 py-2">Alertas automáticas</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fas fa-magnifying-glass text-primary" style="font-size: 8rem; opacity: 0.7;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filtros de Búsqueda -->
+    <div class="container py-5">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="fas fa-filter me-2"></i>Filtros de Búsqueda</h4>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label for="especie" class="form-label">Especie</label>
+                        <select class="form-select" id="especie">
+                            <option value="">Todas las especies</option>
+                            <option value="perro">Perro</option>
+                            <option value="gato">Gato</option>
+                            <option value="ave">Ave</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="raza" class="form-label">Raza</label>
+                        <select class="form-select" id="raza">
+                            <option value="">Todas las razas</option>
+                            <option value="mestizo">Mestizo</option>
+                            <option value="labrador">Labrador</option>
+                            <option value="golden">Golden Retriever</option>
+                            <option value="pastor">Pastor Alemán</option>
+                            <option value="siames">Siamés</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="color" class="form-label">Color</label>
+                        <select class="form-select" id="color">
+                            <option value="">Todos los colores</option>
+                            <option value="negro">Negro</option>
+                            <option value="blanco">Blanco</option>
+                            <option value="marron">Marrón</option>
+                            <option value="gris">Gris</option>
+                            <option value="mixto">Mixto</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="ubicacion" class="form-label">Ubicación</label>
+                        <select class="form-select" id="ubicacion">
+                            <option value="">Todas las ubicaciones</option>
+                            <option value="medellin">Medellín</option>
+                            <option value="envigado">Envigado</option>
+                            <option value="itagui">Itagüí</option>
+                            <option value="bello">Bello</option>
+                            <option value="sabaneta">Sabaneta</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <button type="button" class="btn btn-primary me-2">
+                            <i class="fas fa-search me-2"></i>Buscar
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary">
+                            <i class="fas fa-times me-2"></i>Limpiar filtros
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <!-- Lista de Mascotas Encontradas -->
+    <div class="container py-5">
+        <div class="row">
+            <!-- Tarjeta 1 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://www.hola.com/horizon/original_aspect_ratio/021dc3520272-mestizo-espana-a.jpg?im=Resize=(960),type=downsize" class="card-img-top" alt="Perro encontrado" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Perro Mestizo</h5>
+                        <span class="badge bg-success">Encontrado hoy</span>
+                        <p class="card-text text-muted small"><i class="fas fa-map-marker-alt me-1"></i>Parque El Poblado, Medellín</p>
+                        <p class="card-text">Perro mestizo de tamaño mediano, color café con manchas blancas. Muy amigable, porta collar azul.</p>
+                        <button class="btn btn-primary w-100">Ver detalles completos</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Gato encontrado" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Gato Siamés</h5>
+                        <span class="badge bg-warning">Encontrado ayer</span>
+                        <p class="card-text text-muted small"><i class="fas fa-map-marker-alt me-1"></i>Centro Comercial Santa Fe, Medellín</p>
+                        <p class="card-text">Gata siamés de ojos azules, muy asustadiza. Se encuentra en buen estado de salud.</p>
+                        <button class="btn btn-primary w-100">Ver detalles completos</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Labrador encontrado" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Labrador Golden</h5>
+                        <span class="badge bg-info">Encontrado hace 3 días</span>
+                        <p class="card-text text-muted small"><i class="fas fa-map-marker-alt me-1"></i>Universidad de Antioquia, Medellín</p>
+                        <p class="card-text">Perro de raza grande, muy obediente. Porta placa con número telefónico ilegible.</p>
+                        <button class="btn btn-primary w-100">Ver detalles completos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Paginación -->
+        <nav aria-label="Navegación de páginas">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Siguiente</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Sección de Alertas -->
+    <div class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <h3 class="text-primary mb-4">¿No encontraste a tu mascota?</h3>
+                    <p class="lead mb-4">Activa las alertas automáticas y te notificaremos cuando aparezca una mascota que coincida con las características de la tuya.</p>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-bell text-primary mb-3" style="font-size: 2rem;"></i>
+                                    <h5>Alertas por Email</h5>
+                                    <p class="text-muted small">Recibe notificaciones directamente en tu correo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-mobile-alt text-primary mb-3" style="font-size: 2rem;"></i>
+                                    <h5>SMS Instantáneos</h5>
+                                    <p class="text-muted small">Mensajes de texto al momento del reporte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-share-alt text-primary mb-3" style="font-size: 2rem;"></i>
+                                    <h5>Redes Sociales</h5>
+                                    <p class="text-muted small">Compartimos automáticamente en Facebook e Instagram</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-primary btn-lg me-2">
+                            <i class="fas fa-bell me-2"></i>Configurar Alertas
+                        </button>
+                        <button class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-plus me-2"></i>Reportar Mascota Perdida
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer con información adicional -->
+    <footer class="bg-primary text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Consejos para Encontrar tu Mascota</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check me-2"></i>Revisa regularmente la lista actualizada</li>
+                        <li><i class="fas fa-check me-2"></i>Amplía tu radio de búsqueda</li>
+                        <li><i class="fas fa-check me-2"></i>Contacta refugios cercanos</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Estadísticas de Éxito</h5>
+                    <p class="mb-1">🎉 <strong>85%</strong> de mascotas son reunidas en los primeros 7 días</p>
+                    <p class="mb-1">📱 <strong>1,250+</strong> mascotas reunidas este año</p>
+                    <p class="mb-0">⚡ <strong>Tiempo promedio:</strong> 3.2 días</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

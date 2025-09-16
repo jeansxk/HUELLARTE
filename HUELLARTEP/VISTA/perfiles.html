@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfiles para mascotas perdidas - Huellarte</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/923b6588de.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html#">
+                    <img src="media/logo.png" width="200px" height="150px" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="inicioDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Inicio
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="inicioDropdown">
+                                <li><a class="dropdown-item" href="index.html">Pagina principal</a></li>
+                                <li><a class="dropdown-item" href="index.html#Contacto">Contáctenos</a></li>
+                                <li><a class="dropdown-item" href="index.html#Nosotros">Nosotros</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Servicio.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Fundaciones.html">Fundaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Bienestar.html">Bienestar Animal</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="login.html">Ingresar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección Principal -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 text-primary mb-4">Perfiles para Mascotas Perdidas</h1>
+                    <p class="lead text-muted mb-4">Crea un perfil completo para tu mascota perdida y aumenta las posibilidades de encontrarla.</p>
+                    <button class="btn btn-primary btn-lg me-3" data-bs-toggle="modal" data-bs-target="#crearPerfilModal">
+                        <i class="fas fa-plus me-2"></i>Crear Perfil
+                    </button>
+                    <button class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-search me-2"></i>Buscar Mascotas
+                    </button>
+                </div>
+                <div class="col-lg-6">
+                    <img src="media/perfiles.jpg" class="img-fluid rounded shadow" alt="Mascotas perdidas">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Características del Servicio -->
+    <div class="container py-5">
+        <h2 class="text-center text-primary mb-5">¿Cómo funciona?</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" width="80" height="80">
+                        <i class="fas fa-camera fa-2x p-3"></i>
+                    </div>
+                    <h4>1. Sube fotos</h4>
+                    <p class="text-muted">Añade múltiples fotos de tu mascota desde diferentes ángulos</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                        <i class="fas fa-edit fa-2x p-3"></i>
+                    </div>
+                    <h4>2. Completa detalles</h4>
+                    <p class="text-muted">Describe características físicas, personalidad y último lugar visto</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                        <i class="fas fa-share fa-2x p-3"></i>
+                    </div>
+                    <h4>3. Comparte y busca</h4>
+                    <p class="text-muted">El perfil se comparte automáticamente y recibes alertas de avistamientos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Perfiles Recientes -->
+       <div class="container-fluid bg-light py-5">
+        <div class="container">
+            <h2 class="text-center text-primary mb-5">Mascotas Perdidas Recientes</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.pexels.com/photos/7210756/pexels-photo-7210756.jpeg?w=600" class="card-img-top" alt="Max - Perdido">
+                        <div class="card-body">
+                            <h5 class="card-title">Max</h5>
+                            <p class="card-text">
+                                <i class="fas fa-map-marker-alt text-primary me-2"></i>Kennedy, Bogotá<br>
+                                <i class="fas fa-calendar text-primary me-2"></i>Perdido: 15 Sep 2025<br>
+                                <small class="text-muted">Pastor belga, collar azul, muy amigable</small>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn-sm">Ver detalles</button>
+                            <button class="btn btn-outline-success btn-sm">¡Lo vi!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?w=600" class="card-img-top" alt="Luna - Perdida">
+                        <div class="card-body">
+                            <h5 class="card-title">Luna</h5>
+                            <p class="card-text">
+                                <i class="fas fa-map-marker-alt text-primary me-2"></i>Chapinero, Bogotá<br>
+                                <i class="fas fa-calendar text-primary me-2"></i>Perdida: 14 Sep 2025<br>
+                                <small class="text-muted">Gata siamesa, ojos azules, tímida</small>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn-sm">Ver detalles</button>
+                            <button class="btn btn-outline-success btn-sm">¡La vi!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?w=600" class="card-img-top" alt="Rocky - Perdido">
+                        <div class="card-body">
+                            <h5 class="card-title">Rocky</h5>
+                            <p class="card-text">
+                                <i class="fas fa-map-marker-alt text-primary me-2"></i>Suba, Bogotá<br>
+                                <i class="fas fa-calendar text-primary me-2"></i>Perdido: 13 Sep 2025<br>
+                                <small class="text-muted">Labradores, cicatriz en oreja izquierda</small>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn-sm">Ver detalles</button>
+                            <button class="btn btn-outline-success btn-sm">¡Lo vi!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Crear Perfil -->
+    <div class="modal fade" id="crearPerfilModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Crear Perfil de Mascota Perdida</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nombre de la mascota</label>
+                                <input type="text" class="form-control" placeholder="Ej: Max">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Especie</label>
+                                <select class="form-select">
+                                    <option>Perro</option>
+                                    <option>Gato</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Raza</label>
+                                <input type="text" class="form-control" placeholder="Ej: Labrador">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Color principal</label>
+                                <input type="text" class="form-control" placeholder="Ej: Dorado">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Último lugar visto</label>
+                                <input type="text" class="form-control" placeholder="Dirección o zona">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Descripción adicional</label>
+                                <textarea class="form-control" rows="3" placeholder="Características especiales, personalidad, etc."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Fotos</label>
+                                <input type="file" class="form-control" multiple accept="image/*">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Crear Perfil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apadrinamientos - Huellarte</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/923b6588de.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(61, 174, 194);">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="media/logo.png" width="200px" height="150px" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="inicioDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Inicio
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="inicioDropdown">
+                                <li><a class="dropdown-item" href="index.html">Pagina principal</a></li>
+                                <li><a class="dropdown-item" href="index.html#Contacto">Contáctenos</a></li>
+                                <li><a class="dropdown-item" href="index.html#Nosotros">Nosotros</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Servicio.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Fundaciones.html">Fundaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Bienestar.html">Bienestar Animal</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="login.html">Ingresar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="container-fluid py-5" style="background: linear-gradient(135deg, rgba(61, 174, 194, 0.1), rgba(61, 174, 194, 0.05));">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Apadrinamientos</h1>
+                    <p class="lead mb-4">Ayuda a cambiar la vida de un animal vulnerable con tu apoyo mensual. Cada contribución marca la diferencia en su bienestar y recuperación.</p>
+                    <button class="btn btn-lg text-white px-4" style="background-color: rgb(61, 174, 194);" data-bs-toggle="modal" data-bs-target="#apadrinaModal">
+                        <i class="fas fa-heart me-2"></i>Apadrinar Ahora
+                    </button>
+                </div>
+                <div class="col-lg-6">
+                    <img src="media/apa.jpg" class="img-fluid rounded-3 shadow" alt="Apadrinamientos">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cómo Funciona -->
+    <div class="container py-5">
+        <h2 class="text-center mb-5">¿Cómo Funciona el Apadrinamiento?</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px; background-color: rgba(61, 174, 194, 0.1);">
+                            <i class="fas fa-search fa-2x" style="color: rgb(61, 174, 194);"></i>
+                        </div>
+                        <h5>1. Elige tu Apadrinado</h5>
+                        <p class="text-muted">Explora perfiles de animales que necesitan apoyo y elige el que más te inspire.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px; background-color: rgba(61, 174, 194, 0.1);">
+                            <i class="fas fa-credit-card fa-2x" style="color: rgb(61, 174, 194);"></i>
+                        </div>
+                        <h5>2. Configura tu Donación</h5>
+                        <p class="text-muted">Selecciona el monto mensual que deseas aportar para el cuidado de tu apadrinado.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px; background-color: rgba(61, 174, 194, 0.1);">
+                            <i class="fas fa-camera fa-2x" style="color: rgb(61, 174, 194);"></i>
+                        </div>
+                        <h5>3. Recibe Actualizaciones</h5>
+                        <p class="text-muted">Obtén reportes mensuales con fotos y avances sobre la salud y bienestar de tu apadrinado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animales Disponibles para Apadrinamiento -->
+    <div class="container-fluid py-5" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center mb-5">Animales Esperando un Padrino</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <img src="media/perro1.jpg" class="card-img-top" alt="Luna" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Luna <span class="badge rounded-pill" style="background-color: rgba(61, 174, 194, 0.2); color: rgb(61, 174, 194);">Perro</span></h5>
+                            <p class="card-text text-muted">Hembra, 3 años. En recuperación de cirugía de cadera. Muy cariñosa y juguetona.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Necesita: $50.000/mes</small>
+                                <button class="btn btn-sm text-white" style="background-color: rgb(61, 174, 194);">Apadrinar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <img src="media/gato1.jpg" class="card-img-top" alt="Simba" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Simba <span class="badge rounded-pill" style="background-color: rgba(61, 174, 194, 0.2); color: rgb(61, 174, 194);">Gato</span></h5>
+                            <p class="card-text text-muted">Macho, 2 años. Rescatado de la calle, necesita tratamiento dental y vacunas.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Necesita: $35.000/mes</small>
+                                <button class="btn btn-sm text-white" style="background-color: rgb(61, 174, 194);">Apadrinar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <img src="media/perro2.jpg" class="card-img-top" alt="Max" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Max <span class="badge rounded-pill" style="background-color: rgba(61, 174, 194, 0.2); color: rgb(61, 174, 194);">Perro</span></h5>
+                            <p class="card-text text-muted">Macho, 5 años. Senior con artritis que necesita medicación especial y cuidados.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Necesita: $60.000/mes</small>
+                                <button class="btn btn-sm text-white" style="background-color: rgb(61, 174, 194);">Apadrinar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn text-white px-4" style="background-color: rgb(61, 174, 194);">Ver Más Animales</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Planes de Apadrinamiento -->
+    <div class="container py-5">
+        <h2 class="text-center mb-5">Planes de Apadrinamiento</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow">
+                    <div class="card-header text-center py-4" style="background-color: rgba(61, 174, 194, 0.1);">
+                        <h5 class="mb-0">Plan Básico</h5>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <h2 class="fw-bold mb-3" style="color: rgb(61, 174, 194);">$25.000</h2>
+                        <p class="text-muted mb-4">Por mes</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: rgb(61, 174, 194);"></i>Actualización mensual</li>
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: rgb(61, 174, 194);"></i>Fotos del progreso</li>
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: rgb(61, 174, 194);"></i>Certificado digital</li>
+                        </ul>
+                        <button class="btn text-white w-100" style="background-color: rgb(61, 174, 194);">Seleccionar Plan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow position-relative">
+                    <div class="card-header text-center py-4" style="background-color: rgba(61, 174, 194, 0.1);">
+                        <h5 class="mb-0">Plan Premium</h5>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <h2 class="fw-bold mb-3" style="color: rgb(61, 174, 194);">$50.000</h2>
+                        <p class="text-muted mb-4">Por mes</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: rgb(61, 174, 194);"></i>Todo lo del plan básico</li>
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: rgb(61, 174, 194);"></i>Videos mensuales</li>
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: rgb(61, 174, 194);"></i>Visitas programadas</li>
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: rgb(61, 174, 194);"></i>Reporte veterinario</li>
+                        </ul>
+                        <button class="btn text-white w-100" style="background-color: rgb(61, 174, 194);">Seleccionar Plan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow">
+                    <div class="card-header text-center py-4" style="background-color: rgba(61, 174, 194, 0.1);">
+                        <h5 class="mb-0">Plan VIP</h5>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <h2 class="fw-bold mb-3" style="color: rgb(61, 174, 194);">$75.000</h2>
+                        <p class="text-muted mb-4">Por mes</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: rgb(61, 174, 194);"></i>Todo lo del plan premium</li>
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: rgb(61, 174, 194);"></i>Contacto directo con veterinario</li>
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: rgb(61, 174, 194);"></i>Prioridad en adopción</li>
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: rgb(61, 174, 194);"></i>Kit de bienvenida</li>
+                        </ul>
+                        <button class="btn text-white w-100" style="background-color: rgb(61, 174, 194);">Seleccionar Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonios -->
+    <div class="container-fluid py-5" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center mb-5">Lo que Dicen Nuestros Padrinos</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="fst-italic mb-3">"Apadrinar a Bella ha sido una experiencia increíble. Ver su recuperación mes a mes me llena el corazón."</p>
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="mb-0">Ana Rodríguez</h6>
+                                    <small class="text-muted">Madrina desde hace 8 meses</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="fst-italic mb-3">"Los reportes mensuales son muy detallados. Saber exactamente cómo se usa mi contribución es muy tranquilizador."</p>
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="mb-0">Carlos Mendez</h6>
+                                    <small class="text-muted">Padrino desde hace 1 año</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="fst-italic mb-3">"Poder visitar a mi apadrinado y ver de primera mano su progreso ha sido maravilloso. ¡Ya está listo para adopción!"</p>
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="mb-0">Laura Silva</h6>
+                                    <small class="text-muted">Madrina desde hace 6 meses</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Apadrinamiento -->
+    <div class="modal fade" id="apadrinaModal" tabindex="-1" aria-labelledby="apadrinaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgba(61, 174, 194, 0.1);">
+                    <h5 class="modal-title" id="apadrinaModalLabel">Formulario de Apadrinamiento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="nombrePadrino" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="nombrePadrino" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="emailPadrino" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailPadrino" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="telefonoPadrino" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefonoPadrino">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="planApadrinamiento" class="form-label">Plan de Apadrinamiento</label>
+                                <select class="form-select" id="planApadrinamiento" required>
+                                    <option value="">Seleccionar plan</option>
+                                    <option value="basico">Básico - $25.000/mes</option>
+                                    <option value="premium">Premium - $50.000/mes</option>
+                                    <option value="vip">VIP - $75.000/mes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="animalSeleccionado" class="form-label">Animal a Apadrinar</label>
+                            <select class="form-select" id="animalSeleccionado" required>
+                                <option value="">Seleccionar animal</option>
+                                <option value="luna">Luna - Perro</option>
+                                <option value="simba">Simba - Gato</option>
+                                <option value="max">Max - Perro Senior</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensajePadrino" class="form-label">Mensaje para tu Apadrinado (Opcional)</label>
+                            <textarea class="form-control" id="mensajePadrino" rows="3" placeholder="Escribe un mensaje especial..."></textarea>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="terminosApadrinamiento" required>
+                            <label class="form-check-label" for="terminosApadrinamiento">
+                                Acepto los términos y condiciones del programa de apadrinamiento
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn text-white" style="background-color: rgb(61, 174, 194);">Confirmar Apadrinamiento</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-white py-4" style="background-color: rgb(61, 174, 194);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Huellarte</h5>
+                    <p class="mb-0">Conectando corazones, salvando vidas.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="mb-0">© 2024 Huellarte. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listados de Clínicas - Huellarte</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/923b6588de.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="media/logo.png" width="200px" height="150px" alt="Huellarte Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="inicioDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Inicio</a>
+                            <ul class="dropdown-menu" aria-labelledby="inicioDropdown">
+                                <li><a class="dropdown-item" href="index.html">Página principal</a></li>
+                                <li><a class="dropdown-item" href="index.html#Contacto">Contáctenos</a></li>
+                                <li><a class="dropdown-item" href="index.html#Nosotros">Nosotros</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="Servicio.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Fundaciones.html">Fundaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Bienestar.html">Bienestar Animal</a></li>
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="login.html">Ingresar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold text-primary mb-3">Encuentra Clínicas Veterinarias Cerca de Ti</h1>
+                    <p class="lead mb-4">Accede a nuestra red de clínicas veterinarias certificadas con información actualizada sobre servicios, horarios y especialidades.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-primary fs-6 px-3 py-2"><i class="fas fa-clock me-2"></i>45+ Clínicas</span>
+                        <span class="badge bg-success fs-6 px-3 py-2"><i class="fas fa-star me-2"></i>Verificadas</span>
+                        <span class="badge bg-warning fs-6 px-3 py-2"><i class="fas fa-phone me-2"></i>Emergencias 24/7</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fas fa-hospital text-primary" style="font-size: 8rem;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="container-fluid my-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h4 class="card-title text-center mb-4"><i class="fas fa-filter me-2"></i>Filtrar Clínicas</h4>
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label class="form-label">Ciudad</label>
+                        <select class="form-select" id="ciudadFilter">
+                            <option value="">Todas</option>
+                            <option value="medellin">Medellín</option>
+                            <option value="bogota">Bogotá</option>
+                            <option value="cali">Cali</option>
+                            <option value="barranquilla">Barranquilla</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Especialidad</label>
+                        <select class="form-select" id="especialidadFilter">
+                            <option value="">Todas</option>
+                            <option value="general">Medicina General</option>
+                            <option value="cirugia">Cirugía</option>
+                            <option value="emergencias">Emergencias</option>
+                            <option value="exoticos">Animales Exóticos</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Horario</label>
+                        <select class="form-select" id="horarioFilter">
+                            <option value="">Cualquier horario</option>
+                            <option value="24h">24 Horas</option>
+                            <option value="extended">Horario Extendido</option>
+                            <option value="normal">Horario Normal</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Valoración</label>
+                        <select class="form-select" id="valoracionFilter">
+                            <option value="">Todas</option>
+                            <option value="5">5 estrellas</option>
+                            <option value="4">4+ estrellas</option>
+                            <option value="3">3+ estrellas</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-8">
+                        <label class="form-label">Buscar por nombre</label>
+                        <input type="text" class="form-control" id="nombreFilter" placeholder="Nombre de la clínica...">
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button class="btn btn-primary w-100" onclick="aplicarFiltros()">
+                            <i class="fas fa-search me-2"></i>Buscar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lista de Clínicas -->
+<div class="container-fluid mb-5">
+  <div class="row" id="clinicasList">
+    
+    <!-- Clínica 1 -->
+    <div class="col-lg-6 col-xl-4 mb-4 clinica-card" 
+         data-ciudad="medellin" data-especialidad="general" data-horario="24h" data-valoracion="5">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+          <h5 class="mb-0">VetPlus 24H</h5>
+          <span class="badge bg-success">ABIERTO</span>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="text-warning">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span class="text-muted ms-1">(4.9)</span>
+            </div>
+            <span class="badge bg-danger">EMERGENCIAS</span>
+          </div>
+          <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Carrera 70 #45-32, Medellín</p>
+          <p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>(604) 123-4567</p>
+          <p class="text-muted mb-3"><i class="fas fa-clock me-2"></i>24 Horas - Todos los días</p>
+          
+          <div class="mb-3">
+            <h6 class="text-primary">Especialidades:</h6>
+            <div class="d-flex flex-wrap gap-1">
+              <span class="badge bg-light text-dark">Cirugía</span>
+              <span class="badge bg-light text-dark">Emergencias</span>
+              <span class="badge bg-light text-dark">Radiología</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="text-primary">Precios promedio:</h6>
+            <small class="text-muted">Consulta: $45.000 - Vacunación: $35.000</small>
+          </div>
+        </div>
+        <div class="card-footer bg-light">
+          <div class="row g-2">
+            <div class="col-6">
+              <button class="btn btn-outline-primary btn-sm w-100" onclick="verDetalles('vetplus')">
+                <i class="fas fa-info-circle me-1"></i>Ver Detalles
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-primary btn-sm w-100" onclick="contactar('(604) 123-4567')">
+                <i class="fas fa-phone me-1"></i>Contactar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clínica 2 -->
+    <div class="col-lg-6 col-xl-4 mb-4 clinica-card" 
+         data-ciudad="medellin" data-especialidad="exoticos" data-horario="extended" data-valoracion="4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+          <h5 class="mb-0">Clínica Animal Care</h5>
+          <span class="badge bg-success">ABIERTO</span>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="text-warning">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span class="text-muted ms-1">(4.3)</span>
+            </div>
+            <span class="badge bg-info">ESPECIALIZADA</span>
+          </div>
+          <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Calle 10 #43-07, Medellín</p>
+          <p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>(604) 987-6543</p>
+          <p class="text-muted mb-3"><i class="fas fa-clock me-2"></i>7:00 AM - 9:00 PM</p>
+
+          <div class="mb-3">
+            <h6 class="text-primary">Especialidades:</h6>
+            <div class="d-flex flex-wrap gap-1">
+              <span class="badge bg-light text-dark">Exóticos</span>
+              <span class="badge bg-light text-dark">Dermatología</span>
+              <span class="badge bg-light text-dark">Oftalmología</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="text-primary">Precios promedio:</h6>
+            <small class="text-muted">Consulta: $50.000 - Especializada: $80.000</small>
+          </div>
+        </div>
+        <div class="card-footer bg-light">
+          <div class="row g-2">
+            <div class="col-6">
+              <button class="btn btn-outline-primary btn-sm w-100" onclick="verDetalles('animalcare')">
+                <i class="fas fa-info-circle me-1"></i>Ver Detalles
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-primary btn-sm w-100" onclick="contactar('(604) 987-6543')">
+                <i class="fas fa-phone me-1"></i>Contactar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clínica 3 -->
+    <div class="col-lg-6 col-xl-4 mb-4 clinica-card" 
+         data-ciudad="bogota" data-especialidad="cirugia" data-horario="normal" data-valoracion="5">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+          <h5 class="mb-0">Centro Veterinario Norte</h5>
+          <span class="badge bg-warning text-dark">CERRADO</span>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="text-warning">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span class="text-muted ms-1">(4.8)</span>
+            </div>
+            <span class="badge bg-primary">CIRUGÍA</span>
+          </div>
+          <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Carrera 15 #93-47, Bogotá</p>
+          <p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>(601) 234-5678</p>
+          <p class="text-muted mb-3"><i class="fas fa-clock me-2"></i>8:00 AM - 6:00 PM</p>
+
+          <div class="mb-3">
+            <h6 class="text-primary">Especialidades:</h6>
+            <div class="d-flex flex-wrap gap-1">
+              <span class="badge bg-light text-dark">Cirugía</span>
+              <span class="badge bg-light text-dark">Traumatología</span>
+              <span class="badge bg-light text-dark">Oncología</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="text-primary">Precios promedio:</h6>
+            <small class="text-muted">Consulta: $40.000 - Cirugía: $200.000+</small>
+          </div>
+        </div>
+        <div class="card-footer bg-light">
+          <div class="row g-2">
+            <div class="col-6">
+              <button class="btn btn-outline-primary btn-sm w-100" onclick="verDetalles('cvnorte')">
+                <i class="fas fa-info-circle me-1"></i>Ver Detalles
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-primary btn-sm w-100" onclick="contactar('(601) 234-5678')">
+                <i class="fas fa-phone me-1"></i>Contactar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clínica 4 -->
+    <div class="col-lg-6 col-xl-4 mb-4 clinica-card" 
+         data-ciudad="cali" data-especialidad="general" data-horario="normal" data-valoracion="4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+          <h5 class="mb-0">VetSur Integral</h5>
+          <span class="badge bg-success">ABIERTO</span>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="text-warning">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span class="text-muted ms-1">(4.2)</span>
+            </div>
+            <span class="badge bg-success">GENERAL</span>
+          </div>
+          <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Av. 6N #23-45, Cali</p>
+          <p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>(602) 345-6789</p>
+          <p class="text-muted mb-3"><i class="fas fa-clock me-2"></i>7:30 AM - 7:00 PM</p>
+
+          <div class="mb-3">
+            <h6 class="text-primary">Especialidades:</h6>
+            <div class="d-flex flex-wrap gap-1">
+              <span class="badge bg-light text-dark">General</span>
+              <span class="badge bg-light text-dark">Vacunación</span>
+              <span class="badge bg-light text-dark">Peluquería</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="text-primary">Precios promedio:</h6>
+            <small class="text-muted">Consulta: $38.000 - Vacunación: $32.000</small>
+          </div>
+        </div>
+        <div class="card-footer bg-light">
+          <div class="row g-2">
+            <div class="col-6">
+              <button class="btn btn-outline-primary btn-sm w-100" onclick="verDetalles('vetsur')">
+                <i class="fas fa-info-circle me-1"></i>Ver Detalles
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-primary btn-sm w-100" onclick="contactar('(602) 345-6789')">
+                <i class="fas fa-phone me-1"></i>Contactar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clínica 5 -->
+    <div class="col-lg-6 col-xl-4 mb-4 clinica-card" 
+         data-ciudad="barranquilla" data-especialidad="emergencias" data-horario="24h" data-valoracion="5">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+          <h5 class="mb-0">Hospital Veterinario Costa</h5>
+          <span class="badge bg-success">ABIERTO</span>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="text-warning">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span class="text-muted ms-1">(4.7)</span>
+            </div>
+            <span class="badge bg-danger">EMERGENCIAS</span>
+          </div>
+          <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Calle 45 #46-60, Barranquilla</p>
+          <p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>(605) 456-7890</p>
+          <p class="text-muted mb-3"><i class="fas fa-clock me-2"></i>24 Horas - Todos los días</p>
+
+          <div class="mb-3">
+            <h6 class="text-primary">Especialidades:</h6>
+            <div class="d-flex flex-wrap gap-1">
+              <span class="badge bg-light text-dark">Emergencias</span>
+              <span class="badge bg-light text-dark">UCI</span>
+              <span class="badge bg-light text-dark">Cardiología</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="text-primary">Precios promedio:</h6>
+            <small class="text-muted">Consulta: $42.000 - Emergencia: $75.000+</small>
+          </div>
+        </div>
+        <div class="card-footer bg-light">
+          <div class="row g-2">
+            <div class="col-6">
+              <button class="btn btn-outline-primary btn-sm w-100" onclick="verDetalles('hvcosta')">
+                <i class="fas fa-info-circle me-1"></i>Ver Detalles
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-primary btn-sm w-100" onclick="contactar('(605) 456-7890')">
+                <i class="fas fa-phone me-1"></i>Contactar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clínica 6 -->
+    <div class="col-lg-6 col-xl-4 mb-4 clinica-card" 
+         data-ciudad="medellin" data-especialidad="general" data-horario="extended" data-valoracion="4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+          <h5 class="mb-0">Pet Clinic Express</h5>
+          <span class="badge bg-success">ABIERTO</span>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="text-warning">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span class="text-muted ms-1">(4.1)</span>
+            </div>
+            <span class="badge bg-info">RÁPIDO</span>
+          </div>
+          <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Carrera 80 #30-15, Medellín</p>
+          <p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>(604) 567-8901</p>
+          <p class="text-muted mb-3"><i class="fas fa-clock me-2"></i>6:00 AM - 10:00 PM</p>
+
+          <div class="mb-3">
+            <h6 class="text-primary">Especialidades:</h6>
+            <div class="d-flex flex-wrap gap-1">
+              <span class="badge bg-light text-dark">Consulta rápida</span>
+              <span class="badge bg-light text-dark">Vacunación</span>
+              <span class="badge bg-light text-dark">Desparasitación</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="text-primary">Precios promedio:</h6>
+            <small class="text-muted">Consulta: $35.000 - Sin cita previa</small>
+          </div>
+        </div>
+        <div class="card-footer bg-light">
+          <div class="row g-2">
+            <div class="col-6">
+              <button class="btn btn-outline-primary btn-sm w-100" onclick="verDetalles('petexpress')">
+                <i class="fas fa-info-circle me-1"></i>Ver Detalles
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-primary btn-sm w-100" onclick="contactar('(604) 567-8901')">
+                <i class="fas fa-phone me-1"></i>Contactar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- No resultados -->
+        <div id="noResults" class="text-center py-5 d-none">
+            <i class="fas fa-search text-muted" style="font-size: 4rem;"></i>
+            <h4 class="text-muted mt-3">No se encontraron clínicas</h4>
+            <p class="text-muted">Intenta ajustar los filtros</p>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="detallesModal" tabindex="-1" aria-labelledby="detallesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="detallesModalLabel">Detalles de la Clínica</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modalContent"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="btnContactarModal">
+                        <i class="fas fa-phone me-2"></i>Contactar Ahora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white py-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6"><h5>Huellarte</h5><p>Conectando mascotas con sus familias</p></div>
+                <div class="col-md-6 text-md-end">
+                    <p>¿Necesitas ayuda? <a href="#" class="text-white">Contáctanos</a></p>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Datos de clínicas para el modal
+        const clinicasData = {
+            'vetplus': { nombre: 'VetPlus 24H', telefono: '(604) 123-4567', direccion: 'Carrera 70 #45-32, Medellín', servicios: 'Cirugía, Emergencias, Radiología' },
+            'animalcare': { nombre: 'Clínica Animal Care', telefono: '(604) 987-6543', direccion: 'Calle 10 #43-07, Medellín', servicios: 'Exóticos, Dermatología, Oftalmología' },
+            'cvnorte': { nombre: 'Centro Veterinario Norte', telefono: '(601) 234-5678', direccion: 'Carrera 15 #93-47, Bogotá', servicios: 'Cirugía, Traumatología, Oncología' },
+            'vetsur': { nombre: 'VetSur Integral', telefono: '(602) 345-6789', direccion: 'Av. 6N #23-45, Cali', servicios: 'General, Vacunación, Peluquería' },
+            'hvcosta': { nombre: 'Hospital Veterinario Costa', telefono: '(605) 456-7890', direccion: 'Calle 45 #46-60, Barranquilla', servicios: 'Emergencias, UCI, Cardiología' },
+            'petexpress': { nombre: 'Pet Clinic Express', telefono: '(604) 567-8901', direccion: 'Carrera 80 #30-15, Medellín', servicios: 'Consulta rápida, Vacunación, Desparasitación' }
+        };
+
+        // Mostrar modal con detalles
+        function verDetalles(id) {
+            const clinica = clinicasData[id];
+            if (!clinica) return;
+            document.getElementById('detallesModalLabel').innerText = clinica.nombre;
+            document.getElementById('modalContent').innerHTML = `
+                <p><strong>Dirección:</strong> ${clinica.direccion}</p>
+                <p><strong>Teléfono:</strong> ${clinica.telefono}</p>
+                <p><strong>Servicios:</strong> ${clinica.servicios}</p>
+            `;
+            document.getElementById('btnContactarModal').setAttribute('onclick', `contactar('${clinica.telefono}')`);
+            new bootstrap.Modal(document.getElementById('detallesModal')).show();
+        }
+
+        // Simulación de contacto
+        function contactar(telefono) {
+            alert(`Llamando a la clínica al número: ${telefono}`);
+        }
+
+        // Aplicar filtros
+        function aplicarFiltros() {
+            const ciudad = document.getElementById('ciudadFilter').value.toLowerCase();
+            const especialidad = document.getElementById('especialidadFilter').value.toLowerCase();
+            const horario = document.getElementById('horarioFilter').value.toLowerCase();
+            const valoracion = document.getElementById('valoracionFilter').value;
+            const nombre = document.getElementById('nombreFilter').value.toLowerCase();
+
+            let encontrados = 0;
+            document.querySelectorAll('.clinica-card').forEach(card => {
+                const cCiudad = card.dataset.ciudad;
+                const cEspecialidad = card.dataset.especialidad;
+                const cHorario = card.dataset.horario;
+                const cValoracion = card.dataset.valoracion;
+                const cNombre = card.querySelector('.card-header h5').innerText.toLowerCase();
+
+                const cumple =
+                    (!ciudad || ciudad === cCiudad) &&
+                    (!especialidad || especialidad === cEspecialidad) &&
+                    (!horario || horario === cHorario) &&
+                    (!valoracion || parseInt(cValoracion) >= parseInt(valoracion)) &&
+                    (!nombre || cNombre.includes(nombre));
+
+                if (cumple) {
+                    card.parentElement.classList.remove('d-none');
+                    encontrados++;
+                } else {
+                    card.parentElement.classList.add('d-none');
+                }
+            });
+
+            document.getElementById('noResults').classList.toggle('d-none', encontrados > 0);
+        }
+    </script>
+
+    <style>html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+</style>
+</body>
+</html>
