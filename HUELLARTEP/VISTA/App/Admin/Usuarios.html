@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Nombre del Proyecto</title>
+    <title>Sistema de Gestión</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -38,7 +38,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">LOGO</sup></div>
+                <div class="sidebar-brand-text mx-3">SISTEMA</div>
             </a>
 
             <!-- Divider -->
@@ -48,37 +48,46 @@
             <li class="nav-item">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Nombre Proyecto</span></a>
+                    <span>Dashboard</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
              <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="Usuarios.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-users"></i>
                     <span>Usuarios</span></a>
             </li>
 
              <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="Reportes.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Tabla</span></a>
+                <a class="nav-link" href="Mascotas.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Mascotas</span></a>
             </li>
-               <!-- Nav Item - Charts -->
+            </li>
             <li class="nav-item">
-                <a class="nav-link" href="Reportes.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Tabla</span></a>
+                <a class="nav-link" href="Mascotasfundaciones.html">
+                    <i class="fas fa-fw fa-warehouse"></i>
+                    <span>Mascotas en Fundación</span></a>
             </li>
-               <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="Reportes.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Tabla</span></a>
-            </li>
+            
 
+
+               <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="Publiacaiones.html">
+                    <i class="fas fa-fw fa-shopping-cart"></i>
+                    <span>Publicaciones</span></a>
+            </li>
+               <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="Fundaciones.html">
+                    <i class="fas fa-fw fa-warehouse"></i>
+                    <span>Fundaciones</span></a>
+            
+           
            
            
 
@@ -167,7 +176,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">NOMBRE USUARIO</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">ADMINISTRADOR</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -196,53 +205,145 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2" style="color: blue;">
-                        <i class="fa fa-users" aria-hidden="true"></i> Usuarios
+                    <h1 class="h3 mb-2" style="color: #4e73df;">
+                        <i class="fa fa-users" aria-hidden="true"></i> Gestión de Usuarios
                     </h1>
+                    <p class="mb-4">Administra y visualiza todos los usuarios registrados en el sistema.</p>
                     
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="d-flex justify-content-end m-3">
-                           <button type="button" class="btn btn-primary align-content-end" data-toggle="modal" data-target="#exampleModal">Agregar <i class="fa fa-plus-circle" aria-hidden="true"></i>
-</button>
+                        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                            <h6 class="m-0 font-weight-bold text-primary">Lista de Usuarios</h6>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar Usuario
+                            </button>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead style="background-color: rgb(211, 248, 248);">
+                                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                                    <thead style="background-color: #4e73df; color: white;">
                                         <tr>
-                                            <th class="text-center">Cód. Usuario</th>
+                                            <th class="text-center">ID</th>
                                             <th class="text-center">Tipo Usuario</th>
                                             <th class="text-center">Tipo Documento</th>
                                             <th class="text-center">Identificación</th>
                                             <th class="text-center">Nombre Completo</th>
-                                            <th class="text-center">Correo</th>
+                                            <th class="text-center">Correo Electrónico</th>
                                             <th class="text-center">Celular</th>
-                                            <th class="text-center">Modificar</th>
-                                            <th class="text-center">Eliminar</th>
+                                            <th class="text-center">Estado</th>
+                                            <th class="text-center">Acciones</th>
                                         </tr>
                                     </thead>
                                     
-                                    <tbody>
-                                        <tr>
-                                            <th>1</th>
-                                            <th>Administrador</th>
-                                            <th>Cédula</th>
-                                            <th>33.816.156</th>
-                                            <th>Dianeth Yamile León Valencia</th>
-                                            <th>dianethyamilel@gmail.com</th>
-                                            <th>3135417303</th>
-                                            <th><button type="button" class="btn btn-info"><i class="fa fa-users" aria-hidden="true"></i>
-</i>
-                                                </button>
-                                            </th>
-                                            <th><button type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i>
-                                                </button>
-                                            </th>
-                                        </tr>
-                                      
-                                    </tbody>
+                                   <tbody>
+    <tr>
+        <td class="text-center">001</td>
+        <td class="text-center">17</td> <!-- Administrador -->
+        <td class="text-center">Cédula</td>
+        <td class="text-center">1.098.765.432</td>
+        <td>Carlos Eduardo Martínez López</td>
+        <td>carlos.martinez@empresa.com</td>
+        <td class="text-center">+57 301 234 5678</td>
+        <td class="text-center"><span class="badge badge-success">Activo</span></td>
+        <td class="text-center">
+            <button type="button" class="btn btn-info btn-sm mr-1" title="Editar">
+                <i class="fa fa-edit"></i>
+            </button>
+            <button type="button" class="btn btn-warning btn-sm mr-1" title="Ver">
+                <i class="fa fa-eye"></i>
+            </button>
+            <button type="button" class="btn btn-danger btn-sm" title="Eliminar">
+                <i class="fa fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td class="text-center">002</td>
+        <td class="text-center">16</td> <!-- Supervisor -->
+        <td class="text-center">Cédula</td>
+        <td class="text-center">1.234.567.890</td>
+        <td>María Fernanda Rodríguez Silva</td>
+        <td>maria.rodriguez@empresa.com</td>
+        <td class="text-center">+57 312 987 6543</td>
+        <td class="text-center"><span class="badge badge-success">Activo</span></td>
+        <td class="text-center">
+            <button type="button" class="btn btn-info btn-sm mr-1" title="Editar">
+                <i class="fa fa-edit"></i>
+            </button>
+            <button type="button" class="btn btn-warning btn-sm mr-1" title="Ver">
+                <i class="fa fa-eye"></i>
+            </button>
+            <button type="button" class="btn btn-danger btn-sm" title="Eliminar">
+                <i class="fa fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td class="text-center">003</td>
+        <td class="text-center">18</td> <!-- Empleado -->
+        <td class="text-center">Cédula</td>
+        <td class="text-center">987.654.321</td>
+        <td>José Antonio García Pérez</td>
+        <td>jose.garcia@empresa.com</td>
+        <td class="text-center">+57 315 456 7890</td>
+        <td class="text-center"><span class="badge badge-success">Activo</span></td>
+        <td class="text-center">
+            <button type="button" class="btn btn-info btn-sm mr-1" title="Editar">
+                <i class="fa fa-edit"></i>
+            </button>
+            <button type="button" class="btn btn-warning btn-sm mr-1" title="Ver">
+                <i class="fa fa-eye"></i>
+            </button>
+            <button type="button" class="btn btn-danger btn-sm" title="Eliminar">
+                <i class="fa fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td class="text-center">004</td>
+        <td class="text-center">18</td> <!-- Empleado -->
+        <td class="text-center">Cédula</td>
+        <td class="text-center">1.456.789.123</td>
+        <td>Ana Lucía Hernández Morales</td>
+        <td>ana.hernandez@empresa.com</td>
+        <td class="text-center">+57 318 321 6549</td>
+        <td class="text-center"><span class="badge badge-warning">Suspendido</span></td>
+        <td class="text-center">
+            <button type="button" class="btn btn-info btn-sm mr-1" title="Editar">
+                <i class="fa fa-edit"></i>
+            </button>
+            <button type="button" class="btn btn-warning btn-sm mr-1" title="Ver">
+                <i class="fa fa-eye"></i>
+            </button>
+            <button type="button" class="btn btn-danger btn-sm" title="Eliminar">
+                <i class="fa fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td class="text-center">005</td>
+        <td class="text-center">1</td> <!-- Cliente -->
+        <td class="text-center">Cédula</td>
+        <td class="text-center">1.789.123.456</td>
+        <td>Diego Alejandro Ramírez Castro</td>
+        <td>diego.ramirez@gmail.com</td>
+        <td class="text-center">+57 300 147 8520</td>
+        <td class="text-center"><span class="badge badge-success">Activo</span></td>
+        <td class="text-center">
+            <button type="button" class="btn btn-info btn-sm mr-1" title="Editar">
+                <i class="fa fa-edit"></i>
+            </button>
+            <button type="button" class="btn btn-warning btn-sm mr-1" title="Ver">
+                <i class="fa fa-eye"></i>
+            </button>
+            <button type="button" class="btn btn-danger btn-sm" title="Eliminar">
+                <i class="fa fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+</tbody>
+
                                 </table>
                             </div>
                         </div>
@@ -258,7 +359,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Sistema de Gestión 2024</span>
                     </div>
                 </div>
             </footer>
@@ -286,7 +387,7 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Seleccione "Salir" si está seguro de cerrar sesió<nav></nav></div>
+                <div class="modal-body">Seleccione "Salir" si está seguro de cerrar sesión</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                     <a class="btn btn-primary" href="../Controlador/logout.php">Salir</a>
@@ -299,68 +400,95 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Usuario</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-user-plus"></i> Nuevo Usuario</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <form action="" method="post">
-            <div class="form-group">
-                
-                <input type="nunber" class="form-control" name="idusuario" disabled>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="tipoUsuario">Tipo Usuario:</label>
+                        <select class="form-control" id="tipoUsuario" name="tipoUsuario" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="1">Usuario</option>
+                            <option value="16">Usuario Regular</option>
+                            <option value="17">Administrador</option>
+                            <option value="18">Moderador</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="tipoDocumento">Tipo Documento:</label>
+                        <select class="form-control" id="tipoDocumento" name="tipoDocumento" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="1">Cédula de Ciudadanía</option>
+                            <option value="2">Tarjeta de Identidad</option>
+                            <option value="3">Pasaporte</option>
+                            <option value="4">Cédula de Extranjería</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="identificacion">Identificación:</label>
+                        <input type="text" name="identificacion" class="form-control" id="identificacion" placeholder="Número de identificación" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="celular">Celular:</label>
+                        <input type="text" name="celular" class="form-control" id="celular" placeholder="+57 3XX XXX XXXX" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nombres">Nombres:</label>
+                        <input type="text" name="nombres" class="form-control" id="nombres" placeholder="Nombres completos" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" name="apellidos" class="form-control" id="apellidos" placeholder="Apellidos completos" required>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Tipo Usuario:</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1</option>
-                    <option>2</option>
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" name="correo" class="form-control" id="correo" placeholder="usuario@correo.com" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" name="contrasena" class="form-control" id="contrasena" placeholder="Contraseña segura" required>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <select class="form-control" id="estado" name="estado" required>
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
                 </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Tipo Documento:</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1</option>
-                    <option>2</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="inputAddress">Identificación</label>
-                <input type="text" name="Identificacion" class="form-control" id="inputAddress" placeholder="Identificación">
-            </div>
-            <div class="form-group">
-                <label for="inputAddress">Nombres:</label>
-                <input type="number" name="nombres" class="form-control" id="inputAddress" placeholder="Nombres">
-            </div>
-            <div class="form-group">
-                <label for="inputAddress">Apellidos:</label>
-                <input type="text" name="Apellidos" class="form-control" id="inputAddress" placeholder="Apellidos">
-            </div>
-            <div class="form-group">
-                <label for="inputAddress">Correo Electrónico:</label>
-                <input type="mail" name="Correo" class="form-control" id="inputAddress" placeholder="Correo Electrónico">
-            </div>
-            <div class="form-group">
-                <label for="inputAddress">Celular:</label>
-                <input type="text" name="Celular" class="form-control" id="inputAddress" placeholder="Celulart">
-            </div>
-             <div class="form-group">
-                <label for="inputAddress">Contraseña:</label>
-                <input type="text" name="Celular" class="form-control" id="inputAddress" placeholder="Contraseña">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
         </form>
-        
-
-
       </div>
-      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            <i class="fas fa-times"></i> Cancelar
+        </button>
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save"></i> Guardar Usuario
+        </button>
+      </div>
     </div>
   </div>
 </div>
