@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Huellarte - Usuario</title>
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .sidebar {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 1rem;
+        background-color: #fff;
+        border-right: 1px solid #dee2e6;
+        width: 200px;
+      }
+      .sidebar a {
+        display: block;
+        padding: 10px 15px;
+        margin: 5px 0;
+        color: #333;
+        text-decoration: none;
+        border-radius: 0.375rem;
+      }
+      .sidebar a:hover {
+        background-color: #e9ecef;
+      }
+      .ad-bar {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 1rem;
+        background-color: #fff;
+        border-left: 1px solid #dee2e6;
+        width: 250px;
+        overflow-y: auto;
+      }
+      .content {
+        margin-left: 210px;
+        margin-right: 260px;
+        padding: 1rem;
+      }
+      .card {
+        margin-bottom: 20px;
+        height: 100%;
+      }
+      .filter-bar {
+        margin-bottom: 20px;
+      }
+      .card-img-top {
+        height: 200px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Sidebar Izquierda -->
+    <div class="sidebar">
+      <h4 class="text-center">Huellarte</h4>
+      <a href="#">Inicio</a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#publicarModal">Publicar Mascota</a>
+      <a href="#">Favoritos</a>
+      <a href="#">Perfil</a>
+    </div>
+
+    <!-- Barra de Publicidad Derecha -->
+    <div class="ad-bar">
+      <h5>Publicidad</h5>
+      <div class="card mb-3">
+        <img src="https://via.placeholder.com/200x150" class="card-img-top" alt="Ad1">
+        <div class="card-body">
+          <p class="card-text">¡Adopta y cambia una vida!</p>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <img src="https://via.placeholder.com/200x150" class="card-img-top" alt="Ad2">
+        <div class="card-body">
+          <p class="card-text">Veterinaria 24/7 en tu ciudad</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido Central -->
+    <div class="content">
+
+      <!-- Barra de Filtros -->
+      <div class="filter-bar">
+        <form class="row g-2">
+          <div class="col-md-3">
+            <select class="form-select">
+              <option selected>Raza</option>
+              <option>Pastor Alemán</option>
+              <option>Golden Retriever</option>
+              <option>Criollo</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-select">
+              <option selected>Género</option>
+              <option>Macho</option>
+              <option>Hembra</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-select">
+              <option selected>Tamaño</option>
+              <option>Pequeño</option>
+              <option>Mediano</option>
+              <option>Grande</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-select">
+              <option selected>Ubicación</option>
+              <option>Medellín</option>
+              <option>Bogotá</option>
+              <option>Cali</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+      <!-- Publicaciones (Tarjetas con imagen arriba) -->
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Mascota1">
+            <div class="card-body">
+              <h5 class="card-title">Max</h5>
+              <p class="card-text">Golden Retriever, macho, 2 años, Medellín.</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <a href="#" class="btn btn-primary btn-sm">Ver más</a>
+              <a href="#" class="btn btn-outline-danger btn-sm">❤ Favorito</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Mascota2">
+            <div class="card-body">
+              <h5 class="card-title">Luna</h5>
+              <p class="card-text">Gata criolla, hembra, 1 año, Bogotá.</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <a href="#" class="btn btn-primary btn-sm">Ver más</a>
+              <a href="#" class="btn btn-outline-danger btn-sm">❤ Favorito</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Mascota3">
+            <div class="card-body">
+              <h5 class="card-title">Rocky</h5>
+              <p class="card-text">Pastor Alemán, macho, 3 años, Cali.</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <a href="#" class="btn btn-primary btn-sm">Ver más</a>
+              <a href="#" class="btn btn-outline-danger btn-sm">❤ Favorito</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para Publicar Mascota -->
+    <div class="modal fade" id="publicarModal" tabindex="-1" aria-labelledby="publicarModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="publicarModalLabel">Publicar Mascota</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Imagen</label>
+                <input type="file" class="form-control" accept="image/*">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" placeholder="Ej: Max o Desconocido">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Raza</label>
+                <input type="text" class="form-control" placeholder="Ej: Criollo">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Género</label>
+                <select class="form-select">
+                  <option>Macho</option>
+                  <option>Hembra</option>
+                  <option>Desconocido</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Tamaño</label>
+                <select class="form-select">
+                  <option>Pequeño</option>
+                  <option>Mediano</option>
+                  <option>Grande</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Ubicación</label>
+                <input type="text" class="form-control" placeholder="Ej: Medellín">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Descripción</label>
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-success w-100">Publicar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.js"></script>
+  </body>
+</html>

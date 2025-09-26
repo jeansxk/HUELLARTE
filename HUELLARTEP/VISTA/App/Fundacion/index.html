@@ -1,0 +1,183 @@
+<<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Huellarte</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .sidebar {
+        min-height: 100vh;
+        background-color: #fff;
+        border-right: 1px solid #dee2e6;
+      }
+      .sidebar .nav-link {
+        color: #333;
+        padding: 12px;
+        font-weight: 500;
+      }
+      .sidebar .nav-link.active {
+        background-color: #e9ecef;
+        border-radius: 8px;
+      }
+      .profile-card {
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 12px;
+        padding: 15px;
+        text-align: center;
+      }
+      .profile-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+      .card img {
+        object-fit: cover;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3 col-lg-2 sidebar p-3">
+          <div class="profile-card mb-4">
+            <img src="https://via.placeholder.com/80" alt="Fundación">
+            <h6 class="mb-0">Fundación Huellitas</h6>
+            <small>Correo: fundacion@huellitas.org</small>
+          </div>
+          <nav class="nav flex-column">
+            <a class="nav-link active" href="#">Dashboard</a>
+            <a class="nav-link" href="#">Publicar Mascota</a>
+            <a class="nav-link" href="#">Mis Mascotas</a>
+            <a class="nav-link" href="#">Solicitudes de Adopción</a>
+            <a class="nav-link" href="#">Mensajes</a>
+            <a class="nav-link" href="#">Configuración</a>
+          </nav>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="col-md-9 col-lg-10 p-4">
+          <h3 class="mb-4">Mis Mascotas en Adopción</h3>
+
+          <!-- Card Editable -->
+          <div class="card mb-4 shadow-sm">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://via.placeholder.com/300x200" class="img-fluid rounded-start" alt="Mascota">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <form>
+                    <div class="mb-2">
+                      <label class="form-label">Imagen de la Mascota</label>
+                      <input type="file" class="form-control" accept="image/*" required>
+                    </div>
+                    <div class="mb-2">
+                      <label class="form-label">Nombre</label>
+                      <input type="text" class="form-control" value="Luna">
+                    </div>
+                    <div class="mb-2">
+                      <label class="form-label">Raza</label>
+                      <input type="text" class="form-control" value="Criolla">
+                    </div>
+                    <div class="mb-2">
+                      <label class="form-label">Género</label>
+                      <select class="form-select">
+                        <option selected>Hembra</option>
+                        <option>Macho</option>
+                      </select>
+                    </div>
+                    <div class="mb-2">
+                      <label class="form-label">Tamaño</label>
+                      <select class="form-select">
+                        <option selected>Mediano</option>
+                        <option>Pequeño</option>
+                        <option>Grande</option>
+                      </select>
+                    </div>
+                    <div class="mb-2">
+                      <label class="form-label">Color</label>
+                      <input type="text" class="form-control" value="Blanco con manchas negras">
+                    </div>
+                    <div class="mb-2">
+                      <label class="form-label">Descripción</label>
+                      <textarea class="form-control" rows="2">Es juguetona y cariñosa, ideal para familias con niños.</textarea>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                      <button type="submit" class="btn btn-success btn-sm me-2">Guardar Cambios</button>
+                      <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mascotas Adoptadas -->
+          <h4 class="mb-3">Mascotas Adoptadas</h4>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Mascota adoptada 1 -->
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Mascota Adoptada">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Rocky</h5>
+                  <p class="card-text"><strong>Raza:</strong> Labrador<br>
+                  <strong>Género:</strong> Macho<br>
+                  <strong>Tamaño:</strong> Grande</p>
+                  <div class="mt-auto">
+                    <span class="badge bg-success">Adoptado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Mascota adoptada 2 -->
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Mascota Adoptada">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Mia</h5>
+                  <p class="card-text"><strong>Raza:</strong> Criolla<br>
+                  <strong>Género:</strong> Hembra<br>
+                  <strong>Tamaño:</strong> Mediano</p>
+                  <div class="mt-auto">
+                    <span class="badge bg-success">Adoptada</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Mascota adoptada 3 -->
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Mascota Adoptada">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Simón</h5>
+                  <p class="card-text"><strong>Raza:</strong> Beagle<br>
+                  <strong>Género:</strong> Macho<br>
+                  <strong>Tamaño:</strong> Pequeño</p>
+                  <div class="mt-auto">
+                    <span class="badge bg-success">Adoptado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fin Mascotas Adoptadas -->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
