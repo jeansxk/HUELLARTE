@@ -1,0 +1,106 @@
+:root {
+  --primary: rgb(61, 174, 194);
+  --primary-dark: rgba(40, 140, 155, 0.9);
+  --dark: #303030;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #a6e1fa, #f0fbfc);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary) !important;
+}
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+/* Dropdown hover */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+/* Login Card */
+.login-card {
+  border-radius: 20px;
+  overflow: hidden;
+  border: none;
+}
+.bg-image {
+  position: relative;
+}
+.bg-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(61, 174, 194, 0.8), transparent);
+  z-index: 1;
+}
+.bg-image img {
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+
+/* Formulario */
+.form-label {
+  font-weight: 600;
+  color: #444;
+}
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(61, 174, 194, 0.25);
+}
+
+/* Botones */
+.btn-primary {
+  background-color: var(--primary);
+  border: none;
+  transition: background-color 0.3s;
+}
+.btn-primary:hover {
+  background-color: #3a9ea5;
+}
+.btn-outline-secondary {
+  border-color: #ddd;
+  color: #555;
+  transition: all 0.3s;
+}
+.btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+  border-color: #ccc;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark);
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-card .row {
+    flex-direction: column;
+  }
+  .bg-image {
+    height: 200px;
+  }
+  .bg-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}

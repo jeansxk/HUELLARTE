@@ -1,42 +1,57 @@
 <?php
 session_start();
-// CAMBIO 1: Ruta corregida para conexión.php en la carpeta MODELO
-require_once __DIR__ . '/../MODELO/conexion.php';
+include('../MODELO/conexion.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
+//error_reporting(0);
+//Indicamos que el documento será de tipo html y con caracteres de UTF-8:
+header('Content-Type: text/html; charset=UTF-8');
+//Al presionar el boton que previamente le llamamos "login", traeremos los datos del formulario:
+$btninicio=$_POST['login'];
+if(isset($btninicio)){
+	//Traemos de los inputs los datos de usuario y contraseña:
+    $user=$_POST['email'];
+    $pass=$_POST['password'];
 
-    if (empty($email) || empty($password)) {
-        echo "<script>alert('Completa todos los campos'); window.history.back();</script>";
-        exit;
+    $sql="SELECT idUsuario, contraseña, concat(nombres, ' ', apellidos), idTipousuario 	FROM usuario WHERE idUsuario  ='$user' and contraseña = '$pass'";
+
+
+    $res=$conexion->query($sql);
+    $fila=$res->fetch_row();
+    
+    if($fila[0]==$user && $fila[1]==$pass){
+
+    	
+    	$_SESSION['user']=$fila[0];
+        $_SESSION['tipo']=$fila[3];
+    	$_SESSION['usuario']=$fila[2];
+    	$msj="Bienvenido ".$_SESSION['usuario']."";
+			switch ($_SESSION['tipo']) {
+				case '1':
+					# code...
+					header('location:../Vista/App/admin/Admin.php?mensaje=$msj');
+					break;
+				case '2':
+					# code...
+					header('location:../Vista/index.php?mensaje=$msj');
+					break;
+			case '17':
+					# code...
+					header('location:../Vista/index.php?mensaje=$msj');
+					break;
+				default:
+					# code...
+					header('location:../Vista/index.php?mensaje=$msj');
+					break;
+			}
+
     }
+    else{
+    	echo "<script>
+					alert('Usuario y/o Contraseña Incorrectos');
+					location.href='../vista/index.php';
+					</script>";
 
-    try {
-        $stmt = $pdo->prepare("SELECT * FROM usuario WHERE correo = ? LIMIT 1");
-        $stmt->execute([$email]);
-        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($usuario) {
-            // Verificar contraseña con la columna "contraseña"
-            if (password_verify($password, $usuario['contraseña'])) {
-                // Login exitoso
-                $_SESSION['usuario_id'] = $usuario['idUsuario'];
-                $_SESSION['usuario_nombre'] = $usuario['nombres'];
-                // CAMBIO 2: Ruta corregida para index.html en la carpeta VISTA
-                header("Location: ../VISTA/index.html");
-                exit;
-            } else {
-                echo "<script>alert('Contraseña incorrecta'); window.history.back();</script>";
-            }
-        } else {
-            echo "<script>alert('Usuario no encontrado'); window.history.back();</script>";
-        }
-    } catch (PDOException $e) {
-        echo "<script>alert('Error en la base de datos: " . $e->getMessage() . "'); window.history.back();</script>";
+    
     }
-
-} else {
-    echo "<script>alert('Método no permitido'); window.history.back();</script>";
 }
 ?>
