@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Gestión de Fundaciones - Huellarte">
+    <meta name="description" content="Gestión de Publicaciones - Huellarte">
     <meta name="author" content="Huellarte">
 
-    <title>Fundaciones - Huellarte</title>
+    <title>Publicaciones - Huellarte</title>
 
     <!-- Custom fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -101,13 +101,13 @@
                     <span>Mascotas en Fundación</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="Publicaciones.html">
                     <i class="fas fa-fw fa-bullhorn"></i>
                     <span>Publicaciones</span>
                 </a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="Fundaciones.html">
                     <i class="fas fa-fw fa-building"></i>
                     <span>Fundaciones</span>
@@ -184,15 +184,15 @@
                 <div class="container-fluid">
 
                     <h1 class="h3 mb-2">
-                        <i class="fa fa-building"></i> Gestión de Fundaciones
+                        <i class="fa fa-bullhorn"></i> Gestión de Publicaciones
                     </h1>
-                    <p class="mb-4">Administra y visualiza todas las fundaciones registradas en el sistema.</p>
+                    <p class="mb-4">Administra y visualiza todas las publicaciones del sistema.</p>
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                            <h6 class="m-0 font-weight-bold" style="color: var(--primary);">Lista de Fundaciones</h6>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addFundacionModal">
-                                <i class="fa fa-plus-circle"></i> Agregar Fundación
+                            <h6 class="m-0 font-weight-bold" style="color: var(--primary);">Lista de Publicaciones</h6>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPublicacionModal">
+                                <i class="fa fa-plus-circle"></i> Agregar Publicación
                             </button>
                         </div>
                         <div class="card-body">
@@ -200,17 +200,12 @@
                                 <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">ID Fundación</th>
-                                            <th class="text-center">Razón Social</th>
-                                            <th class="text-center">NIT</th>
-                                            <th class="text-center">ID Representante</th>
-                                            <th class="text-center">Dirección</th>
-                                            <th class="text-center">Foto Blog</th>
-                                            <th class="text-center">Teléfono</th>
-                                            <th class="text-center">Whatsapp</th>
-                                            <th class="text-center">Contraseña</th>
-                                            <th class="text-center">ID Ciudad</th>
-                                            <th class="text-center">ID Departamento</th>
+                                            <th class="text-center">ID Publicación</th>
+                                            <th class="text-center">ID Usuario</th>
+                                            <th class="text-center">ID Mascota</th>
+                                            <th class="text-center">Título</th>
+                                            <th class="text-center">Descripción</th>
+                                            <th class="text-center">Fecha Publicación</th>
                                             <th class="text-center">Acciones</th>
                                         </tr>
                                     </thead>
@@ -220,17 +215,12 @@
                                             Ejemplo de estructura por fila (PHP/JS):
                                             
                                             <tr>
-                                                <td class="text-center">FND-001</td>
-                                                <td>Fundación Esperanza</td>
-                                                <td class="text-center">900123456</td>
-                                                <td class="text-center">101</td>
-                                                <td>Calle 45 #10-20</td>
-                                                <td class="text-center"><img src="ruta/foto.jpg" width="40" alt="Foto"></td>
-                                                <td class="text-center">+57 320 456 7890</td>
-                                                <td class="text-center">+57 320 456 7890</td>
-                                                <td class="text-center">••••••••</td>
-                                                <td class="text-center">01</td>
-                                                <td class="text-center">05</td>
+                                                <td class="text-center">PUB-001</td>
+                                                <td class="text-center">USR-123</td>
+                                                <td class="text-center">PET-456</td>
+                                                <td>¡Encontré a Max!</td>
+                                                <td>Perro encontrado en el parque El Poblado...</td>
+                                                <td class="text-center">2025-04-05 14:30</td>
                                                 <td class="text-center">
                                                     <button class="btn btn-warning btn-sm mr-1" title="Ver">
                                                         <i class="fa fa-eye"></i>
@@ -287,12 +277,12 @@
         </div>
     </div>
 
-    <!-- Modal Agregar Fundación -->
-    <div class="modal fade" id="addFundacionModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Modal Agregar Publicación -->
+    <div class="modal fade" id="addPublicacionModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title"><i class="fas fa-building"></i> Nueva Fundación</h5>
+                    <h5 class="modal-title"><i class="fas fa-bullhorn"></i> Nueva Publicación</h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
@@ -302,76 +292,38 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="idFundacion">ID Fundación:</label>
-                                    <input type="text" class="form-control" id="idFundacion" name="idFundacion" placeholder="Ej: FND-001" required>
+                                    <label for="idPublicacion">ID Publicación:</label>
+                                    <input type="text" class="form-control" id="idPublicacion" name="idPublicacion" placeholder="Ej: PUB-001" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="razonSocial">Razón Social:</label>
-                                    <input type="text" class="form-control" id="razonSocial" name="razonSocial" placeholder="Nombre de la fundación" required>
+                                    <label for="idUsuario">ID Usuario:</label>
+                                    <input type="text" class="form-control" id="idUsuario" name="idUsuario" placeholder="Ej: USR-123" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="nit">NIT:</label>
-                                    <input type="text" class="form-control" id="nit" name="nit" placeholder="900123456-7" required>
+                                    <label for="idMascota">ID Mascota:</label>
+                                    <input type="text" class="form-control" id="idMascota" name="idMascota" placeholder="Ej: PET-456" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="idRepresentante">ID Representante:</label>
-                                    <input type="text" class="form-control" id="idRepresentante" name="idRepresentante" placeholder="Ej: USR-101" required>
+                                    <label for="fechaPublicacion">Fecha Publicación:</label>
+                                    <input type="datetime-local" class="form-control" id="fechaPublicacion" name="fechaPublicacion" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="direccion">Dirección:</label>
-                            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Calle, número, barrio" required>
+                            <label for="titulo">Título:</label>
+                            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ej: ¡Encontré a Max!" required>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="telefono">Teléfono:</label>
-                                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="+57 3XX XXX XXXX" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="whatsapp">Whatsapp:</label>
-                                    <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="+57 3XX XXX XXXX" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="contrasena">Contraseña:</label>
-                                    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña segura" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="fotoBlog">URL Foto Blog:</label>
-                                    <input type="text" class="form-control" id="fotoBlog" name="fotoBlog" placeholder="https://ejemplo.com/foto.jpg">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="idCiudad">ID Ciudad:</label>
-                                    <input type="text" class="form-control" id="idCiudad" name="idCiudad" placeholder="Ej: 01" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="idDepto">ID Departamento:</label>
-                                    <input type="text" class="form-control" id="idDepto" name="idDepto" placeholder="Ej: 05" required>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción:</label>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Descripción detallada de la publicación..." required></textarea>
                         </div>
                     </form>
                 </div>
@@ -380,7 +332,7 @@
                         <i class="fas fa-times"></i> Cancelar
                     </button>
                     <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> Guardar Fundación
+                        <i class="fas fa-save"></i> Guardar Publicación
                     </button>
                 </div>
             </div>

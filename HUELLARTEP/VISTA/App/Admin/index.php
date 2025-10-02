@@ -4,62 +4,96 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Gestión de Tipo de Documento - Huellarte">
+    <meta name="description" content="Panel de administración - Huellarte">
     <meta name="author" content="Huellarte">
 
-    <title>Tipo Documento - Huellarte</title>
+    <title>Dashboard - Huellarte</title>
 
     <!-- Custom fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Custom styles -->
+    <!-- Estilos personalizados (SB Admin 2 base + personalización Huellarte) -->
     <link href="css/sb-admin-2.css" rel="stylesheet">
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
     <style>
         :root {
             --primary: rgb(61, 174, 194);
-            --primary-dark: #2a9d8f;
+            --primary-dark: rgba(40, 140, 155, 0.9);
+            --dark: #303030;
         }
+
+        /* Sidebar con gradiente Huellarte */
         .sidebar {
-            background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+            background: linear-gradient(180deg, var(--primary) 0%, #2a9d8f 100%) !important;
         }
+
+        /* Brand */
+        .sidebar-brand {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Íconos del sidebar */
+        .nav-item .nav-link i {
+            color: rgba(255,255,255,0.8) !important;
+        }
+        .nav-item.active .nav-link i,
+        .nav-item:hover .nav-link i {
+            color: white !important;
+        }
+
+        /* Topbar */
+        .topbar {
+            background-color: white !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* Dropdown user */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Botón de logout */
         .btn-primary {
             background-color: var(--primary) !important;
             border-color: var(--primary) !important;
         }
         .btn-primary:hover {
-            background-color: var(--primary-dark) !important;
-            border-color: var(--primary-dark) !important;
+            background-color: #2a9d8f !important;
+            border-color: #2a9d8f !important;
         }
-        .table thead th {
+
+        /* Scroll to top */
+        .scroll-to-top {
             background-color: var(--primary) !important;
-            color: white !important;
         }
-        .sidebar-brand-text {
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 700;
+        .scroll-to-top:hover {
+            background-color: #2a9d8f !important;
         }
-        .topbar {
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-        }
+
+        /* Footer */
         .sticky-footer {
-            background-color: #303030 !important;
+            background-color: var(--dark) !important;
             color: white !important;
         }
         .sticky-footer .copyright {
             color: rgba(255,255,255,0.7) !important;
         }
-        .modal-header {
-            background-color: var(--primary);
-            color: white;
+
+        /* Logo en el centro */
+        .project-logo {
+            height: 120px;
+            margin: 2rem auto;
+            display: block;
         }
     </style>
 </head>
 
 <body id="page-top">
 
+    <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
@@ -72,19 +106,23 @@
                 </div>
             </a>
 
+            <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <li class="nav-item">
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
+            <!-- Divider -->
             <hr class="sidebar-divider">
 
+            <!-- Sección: Gestión -->
             <li class="nav-item">
-                <a class="nav-link" href="Usuarios.html">
+                <a class="nav-link" href="Usuarios.php">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Usuarios</span>
                 </a>
@@ -108,30 +146,41 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="comentario.html">
+                    <i class="fas fa-fw fa-message"></i>
+                    <span>Comentarios</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="Fundaciones.html">
                     <i class="fas fa-fw fa-building"></i>
                     <span>Fundaciones</span>
                 </a>
             </li>
 
+            <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <li class="nav-item active">
+            <!-- Configuración -->
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseConfig"
                     aria-expanded="true" aria-controls="collapseConfig">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Configuración</span>
                 </a>
-                <div id="collapseConfig" class="collapse show" aria-labelledby="headingConfig" data-parent="#accordionSidebar">
+                <div id="collapseConfig" class="collapse" aria-labelledby="headingConfig" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item active" href="TipoDocumento.html">Tipo Documento</a>
+                        <a class="collapse-item" href="TipoDocumento.html">Tipo Documento</a>
                         <a class="collapse-item" href="TipoUsuario.html">Tipo Usuario</a>
                         <a class="collapse-item" href="Ciudad.html">Ciudad</a>
                         <a class="collapse-item" href="Depto.html">Departamento</a>
+                         <a class="collapse-item" href="raza.html">Raza</a>
+                         <a class="collapse-item" href="especie.html">Especie</a>
                     </div>
                 </div>
             </li>
 
+            <!-- Reportes -->
             <li class="nav-item">
                 <a class="nav-link" href="Reportes.html">
                     <i class="fas fa-fw fa-chart-bar"></i>
@@ -139,8 +188,10 @@
                 </a>
             </li>
 
+            <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
+            <!-- Sidebar Toggler -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
@@ -150,24 +201,37 @@
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
+
                         <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin Huellarte</span>
                                 <img class="img-profile rounded-circle"
                                     src="https://ui-avatars.com/api/?name=Admin&background=3daec2&color=fff&size=32">
                             </a>
+                            <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Perfil
+                                    Mi Perfil
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -176,62 +240,23 @@
                                 </a>
                             </div>
                         </li>
+
                     </ul>
+
                 </nav>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <h1 class="h3 mb-2">
-                        <i class="fa fa-id-card"></i> Tipo Documento
-                    </h1>
-
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3 d-flex justify-content-end">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                <i class="fa fa-plus-circle"></i> Agregar
-                            </button>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center">Cód. Tipo Documento</th>
-                                            <th class="text-center">Tipo Documento</th>
-                                            <th class="text-center">Modificar</th>
-                                            <th class="text-center">Eliminar</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- 
-                                            Aquí se insertarán dinámicamente las filas desde la base de datos.
-                                            Ejemplo de estructura por fila (PHP/JS):
-                                            
-                                            <tr>
-                                                <td class="text-center">1</td>
-                                                <td>Cédula de Ciudadanía</td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-info btn-sm" title="Editar">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-danger btn-sm" title="Eliminar">
-                                                        <i class="fa fa-trash"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        -->
-                                    </tbody>
-                                </table>
-                            </div>
+                <div class="container-fluid py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <img src="../../media/logo.png" alt="Huellarte" class="project-logo">
+                            <h2 class="text-gray-800 mt-3">Panel de Administración</h2>
+                            <p class="text-muted">Gestiona usuarios, mascotas, fundaciones y más.</p>
                         </div>
                     </div>
-
                 </div>
-                <!-- /.container-fluid -->
+                <!-- End of Main Content -->
 
             </div>
 
@@ -246,65 +271,40 @@
             <!-- End of Footer -->
 
         </div>
-    </div>
+        <!-- End of Content Wrapper -->
 
-    <!-- Logout Modal -->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">¿Cerrar sesión?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">¿Cerrar sesión?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span>&times;</span>
+                        <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">Seleccione "Salir" si realmente desea terminar su sesión.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="../Controlador/logout.php">Salir</a>
+                    <a class="btn btn-primary" href="../../login.html">Salir</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal Agregar Tipo Documento -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"><i class="fa fa-id-card"></i> Tipo Documento</h5>
-                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                        <span>&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <label for="idTipodoc">Cód. Tipo Documento</label>
-                            <input type="number" class="form-control" name="idTipodoc" id="idTipodoc" disabled placeholder="Se asigna automáticamente">
-                        </div>
-                        <div class="form-group">
-                            <label for="tipoDoc">Tipo Documento</label>
-                            <input type="text" class="form-control" name="tipoDoc" id="tipoDoc" placeholder="Ej: Cédula de Ciudadanía" required>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/sb-admin-2.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 </html>

@@ -1,27 +1,32 @@
 <?php
-include ('../Modelo/conex.php');
-header( 'Content-Type: text/html; charset=UTF-8'); 
-session_start(); 
-error_reporting(0); 
+include ('../MODELO/conexion.php');
+header('Content-Type: text/html; charset=UTF-8');
+session_start();
+error_reporting(0);
 
-$id = $_REQUEST['id'];
+// Validación: solo permite números
+if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+    header("Location: ../Vista/App/Admin/Usuarios.php");
+    exit;
+}
 
-	
-			
+$id = (int)$_GET['id'];
 
-			$del = $conexion -> query("DELETE FROM usuario WHERE idUsuario = '$id' ");
-				if ($del) {
-					echo "<script>
-					location.href='../Vista/App/admin/Admin.php#imprime?Result=1';
-					</script>";
-				}else{
-					echo "<script>
-					alert('El registro no pudo ser eliminado');
-					location.href='../Vista/App/admin/Admin.php';
-					</script>";
+// Sentencia preparada para evitar inyección SQL
+$stmt = $conexion->prepare("DELETE FROM usuario WHERE idUsuario = ?");
+$stmt->bind_param("i", $id);
+$del = $stmt->execute();
 
-				}
-
-
-		
- ?>
+if ($del) {
+    echo "<script>
+    alert('Usuario eliminado correctamente.');
+    location.href='../Vista/App/Admin/Usuarios.php';
+    </script>";
+} else {
+    echo "<script>
+    alert('Error al eliminar el usuario. Inténtalo nuevamente.');
+    location.href='../Vista/App/Admin/Usuarios.php';
+    </script>";
+}
+exit;
+?>

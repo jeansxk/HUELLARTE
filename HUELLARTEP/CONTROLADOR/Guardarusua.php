@@ -1,36 +1,64 @@
-<?php 
-include ('conex.php');
-   /* El  usuario debiò haber presionado el botòn guardar que lo trae hasta acà--> */
-   if(isset($_POST['BtnGuardar'])) {
+<?php
+include('../MODELO/conexion.php');
+header('Content-Type: text/html; charset=UTF-8');
+session_start();
+error_reporting(0);
 
-   	 /* Creamos  unas nuevas variables con el signo $, donde almacenaremos lo que trae en los formularios en name ="idusuario", por ejemplo */
-	$usuario = $_POST['idusuario'];
-	$TipoDoc = $_POST['TipoDoc'];
-	$Tipousua =$_POST['TipoUsua'];
-	$Nombre = $_POST['NombUsua'];
-	$Apellidos = $_POST['ApellUsua'];
-	$Genero= $_POST['GeneUsu'];
-	$Fecha = $_POST['FechaNac'];
-	$clave = $_POST['PassUsua'];
-	$Direccion = $_POST['DirUsua'];
-	$Cel = $_POST['CeluUsua'];
-	$correo = $_POST['CorreoUsua'];
-echo $Tipousua .'<br>';
-	 /* Creamos la sentencia para insertar datos en la tabla  usuario, las primeras variables corresponden a las que aparecen en la estructura de la BD y despues de Values corresponde a las que creamos anteriormente */
-	$ins= "INSERT INTO  usuario ( idUsuario, IdTipoDoc, idTipoUsuario, NombreUsuario, ApellidoUsuario,  GeneroUsua, FechaNacUsua, ClaveUsua, DireccionUsua, CelUsua, CorreoUsua) VALUES ('$usuario', '$TipoDoc', '$Tipousua', '$Nombre', '$Apellidos','$Genero', '$Fecha', '$clave','$Direccion', '$Cel', '$correo')";
-	
-	if(mysqli_query($conexion,$ins)==TRUE) {
-		echo "<script>
-				alert('El registro se guardó exitosamente');
-				location.href='../Vista/App/admin/Admin.php';
-					</script>";
-			}else{
-				"<script>
-				alert('El registro no pudo ser guardado');
-				location.href='../Vista/App/admin/Admin.php';
-					</script>";
-			}
-  }
+// Recibir datos del formulario
+$idTipousuario = $_POST['idTipousuario'] ?? '';
+$idTipodoc = $_POST['idTipodoc'] ?? '';
+$nombres = $_POST['nombres'] ?? '';
+$apellidos = $_POST['apellidos'] ?? '';
+$celular = $_POST['celular'] ?? '';
+$correo = $_POST['correo'] ?? '';
+$contraseña = $_POST['contraseña'] ?? '';
+$numeroDocumento = $_POST['numeroDocumento'] ?? '';
+$fotoBlog = $_POST['fotoBlog'] ?? '';
+$idCiudad = $_POST['idCiudad'] ?? '';
+$idDepartamento = $_POST['idDepartamento'] ?? '';
 
-  mysqli_close($conexion);
- ?>
+// Validaciones básicas
+if (empty($nombres) || empty($apellidos) || empty($celular) || empty($correo) || empty($contraseña) || empty($numeroDocumento)) {
+    echo "<script>
+    alert('Todos los campos son obligatorios.');
+    history.back();
+    </script>";
+    exit;
+}
+
+// Hashear contraseña
+$contraseña_hash = password_hash($contraseña, PASSWORD_DEFAULT);
+
+// Preparar consulta
+$stmt = $conexion->prepare("
+    INSERT INTO usuario (
+        idTipousuario, idTipodoc, nombres, apellidos, celular, correo, contraseña, numeroDocumento, fotoBlog, idCiudad, idDepartamento
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+");
+
+$stmt->bind_param(
+    "iisssssssii",
+    $idTipousuario,
+    $idTipodoc,
+    $nombres,
+    $apellidos,
+    $celular,
+    $correo,
+    $contraseña_hash,
+    $numeroDocumento,
+    $fotoBlog,
+    $idCiudad,
+    $idDepartamento
+);
+
+$guardado = $stmt->execute();
+
+if ($guardado) {
+    // ✅ CORREGIDO: Redirige a Usuarios.php (no .html) y con ruta relativa correcta
+    header("Location: ../Vista/App/Admin/Usuarios.php?guardado=1");
+} else {
+    // ✅ CORREGIDO: Redirige a Usuarios.php (no .html)
+    header("Location: ../Vista/App/Admin/Usuarios.php?error=1");
+}
+exit;
+?>

@@ -2,56 +2,56 @@
 session_start();
 include('../MODELO/conexion.php');
 
-//error_reporting(0);
-//Indicamos que el documento será de tipo html y con caracteres de UTF-8:
+// Indicamos que el documento será de tipo html y con caracteres UTF-8
 header('Content-Type: text/html; charset=UTF-8');
-//Al presionar el boton que previamente le llamamos "login", traeremos los datos del formulario:
-$btninicio=$_POST['login'];
-if(isset($btninicio)){
-	//Traemos de los inputs los datos de usuario y contraseña:
-    $user=$_POST['email'];
-    $pass=$_POST['password'];
 
-    $sql="SELECT idUsuario, contraseña, concat(nombres, ' ', apellidos), idTipousuario 	FROM usuario WHERE idUsuario  ='$user' and contraseña = '$pass'";
+// Verificamos si se presionó el botón "login"
+if (isset($_POST['login'])) {
 
+    // Traemos los datos del formulario
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
 
-    $res=$conexion->query($sql);
-    $fila=$res->fetch_row();
-    
-    if($fila[0]==$user && $fila[1]==$pass){
+    // Consulta: buscamos por correo y contraseña
+    $sql = "SELECT idUsuario, `contraseña`, CONCAT(nombres, ' ', apellidos) AS nombreCompleto, idTipousuario 
+            FROM usuario 
+            WHERE correo = '$email' AND `contraseña` = '$pass'";
 
-    	
-    	$_SESSION['user']=$fila[0];
-        $_SESSION['tipo']=$fila[3];
-    	$_SESSION['usuario']=$fila[2];
-    	$msj="Bienvenido ".$_SESSION['usuario']."";
-			switch ($_SESSION['tipo']) {
-				case '1':
-					# code...
-					header('location:../Vista/App/admin/Admin.php?mensaje=$msj');
-					break;
-				case '2':
-					# code...
-					header('location:../Vista/index.php?mensaje=$msj');
-					break;
-			case '17':
-					# code...
-					header('location:../Vista/index.php?mensaje=$msj');
-					break;
-				default:
-					# code...
-					header('location:../Vista/index.php?mensaje=$msj');
-					break;
-			}
+    $res = $conexion->query($sql);
 
-    }
-    else{
-    	echo "<script>
-					alert('Usuario y/o Contraseña Incorrectos');
-					location.href='../vista/index.php';
-					</script>";
+    // Si encontró un usuario
+    if ($res && $res->num_rows > 0) {
+        $fila = $res->fetch_assoc();
 
-    
+        // Guardamos datos en la sesión
+        $_SESSION['user'] = $fila['idUsuario'];
+        $_SESSION['tipo'] = $fila['idTipousuario'];
+        $_SESSION['usuario'] = $fila['nombreCompleto'];
+
+        $msj = "Bienvenido " . $_SESSION['usuario'];
+
+        // Redirigimos según el tipo de usuario
+        switch ($_SESSION['tipo']) {
+            case '1': // Administrador
+                header("Location: ../VISTA/App/Admin/index.html?mensaje=?mensaje=" . urlencode($msj));
+                exit;
+            case '2': // Usuario normal
+                header("Location: ../VISTA/App/Usuario/index.html?mensaje=" . urlencode($msj));
+                exit;
+            case '3': // Fundación
+                header("Location: ../VISTA/App/Fundacion/index.html?mensaje=" . urlencode($msj));
+                exit;
+            default:
+                header("Location: ../VISTA/index.php?mensaje=" . urlencode($msj));
+                exit;
+        }
+
+    } else {
+        // Si no se encontró el usuario
+        echo "<script>
+            alert('Usuario y/o Contraseña Incorrectos');
+            location.href='../VISTA/index.php';
+        </script>";
     }
 }
 ?>

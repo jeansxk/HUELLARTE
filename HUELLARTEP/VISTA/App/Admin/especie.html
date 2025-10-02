@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Gestión de Fundaciones - Huellarte">
+    <meta name="description" content="Gestión de Especies - Huellarte">
     <meta name="author" content="Huellarte">
 
-    <title>Fundaciones - Huellarte</title>
+    <title>Especies - Huellarte</title>
 
     <!-- Custom fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -51,9 +51,9 @@
         .sticky-footer .copyright {
             color: rgba(255,255,255,0.7) !important;
         }
-        .modal-body .form-group label {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+        .modal-header {
+            background-color: var(--primary);
+            color: white;
         }
     </style>
 </head>
@@ -89,7 +89,7 @@
                     <span>Usuarios</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="Mascotas.html">
                     <i class="fas fa-fw fa-dog"></i>
                     <span>Mascotas</span>
@@ -107,7 +107,7 @@
                     <span>Publicaciones</span>
                 </a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="Fundaciones.html">
                     <i class="fas fa-fw fa-building"></i>
                     <span>Fundaciones</span>
@@ -184,15 +184,15 @@
                 <div class="container-fluid">
 
                     <h1 class="h3 mb-2">
-                        <i class="fa fa-building"></i> Gestión de Fundaciones
+                        <i class="fa fa-paw"></i> Gestión de Especies
                     </h1>
-                    <p class="mb-4">Administra y visualiza todas las fundaciones registradas en el sistema.</p>
+                    <p class="mb-4">Administra los tipos de especies disponibles en el sistema.</p>
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                            <h6 class="m-0 font-weight-bold" style="color: var(--primary);">Lista de Fundaciones</h6>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addFundacionModal">
-                                <i class="fa fa-plus-circle"></i> Agregar Fundación
+                            <h6 class="m-0 font-weight-bold" style="color: var(--primary);">Lista de Especies</h6>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addEspecieModal">
+                                <i class="fa fa-plus-circle"></i> Agregar Especie
                             </button>
                         </div>
                         <div class="card-body">
@@ -200,50 +200,27 @@
                                 <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">ID Fundación</th>
-                                            <th class="text-center">Razón Social</th>
-                                            <th class="text-center">NIT</th>
-                                            <th class="text-center">ID Representante</th>
-                                            <th class="text-center">Dirección</th>
-                                            <th class="text-center">Foto Blog</th>
-                                            <th class="text-center">Teléfono</th>
-                                            <th class="text-center">Whatsapp</th>
-                                            <th class="text-center">Contraseña</th>
-                                            <th class="text-center">ID Ciudad</th>
-                                            <th class="text-center">ID Departamento</th>
+                                            <th class="text-center">ID Especie</th>
+                                            <th class="text-center">Nombre Especie</th>
                                             <th class="text-center">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- 
-                                            Aquí se insertarán dinámicamente las filas desde la base de datos.
-                                            Ejemplo de estructura por fila (PHP/JS):
-                                            
-                                            <tr>
-                                                <td class="text-center">FND-001</td>
-                                                <td>Fundación Esperanza</td>
-                                                <td class="text-center">900123456</td>
-                                                <td class="text-center">101</td>
-                                                <td>Calle 45 #10-20</td>
-                                                <td class="text-center"><img src="ruta/foto.jpg" width="40" alt="Foto"></td>
-                                                <td class="text-center">+57 320 456 7890</td>
-                                                <td class="text-center">+57 320 456 7890</td>
-                                                <td class="text-center">••••••••</td>
-                                                <td class="text-center">01</td>
-                                                <td class="text-center">05</td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-warning btn-sm mr-1" title="Ver">
-                                                        <i class="fa fa-eye"></i>
-                                                    </button>
-                                                    <button class="btn btn-info btn-sm mr-1" title="Editar">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button class="btn btn-danger btn-sm" title="Eliminar">
-                                                        <i class="fa fa-trash"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        -->
+                                        <tr><td class="text-center">1</td><td>Perro</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">2</td><td>Gato</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">3</td><td>Conejo</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">4</td><td>Ave</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">5</td><td>Tortuga</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">6</td><td>Hámster</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">7</td><td>Pez</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">8</td><td>Caballo</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">9</td><td>Erizo</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">10</td><td>Iguana</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">11</td><td>Hurón</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">12</td><td>Cerdo Miniatura</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">13</td><td>Loro</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">14</td><td>Cabra</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
+                                        <tr><td class="text-center">15</td><td>Otros</td><td class="text-center"><button class="btn btn-info btn-sm mr-1" title="Editar"><i class="fa fa-edit"></i></button><button class="btn btn-success btn-sm mr-1" title="Copiar"><i class="fa fa-copy"></i></button><button class="btn btn-danger btn-sm" title="Eliminar"><i class="fa fa-trash"></i></button></td></tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -287,101 +264,31 @@
         </div>
     </div>
 
-    <!-- Modal Agregar Fundación -->
-    <div class="modal fade" id="addFundacionModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+    <!-- Modal Agregar Especie -->
+    <div class="modal fade" id="addEspecieModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title"><i class="fas fa-building"></i> Nueva Fundación</h5>
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa fa-paw"></i> Nueva Especie</h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form action="" method="post">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="idFundacion">ID Fundación:</label>
-                                    <input type="text" class="form-control" id="idFundacion" name="idFundacion" placeholder="Ej: FND-001" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="razonSocial">Razón Social:</label>
-                                    <input type="text" class="form-control" id="razonSocial" name="razonSocial" placeholder="Nombre de la fundación" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="nit">NIT:</label>
-                                    <input type="text" class="form-control" id="nit" name="nit" placeholder="900123456-7" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="idRepresentante">ID Representante:</label>
-                                    <input type="text" class="form-control" id="idRepresentante" name="idRepresentante" placeholder="Ej: USR-101" required>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label for="idEspecie">ID Especie</label>
+                            <input type="number" class="form-control" name="idEspecie" id="idEspecie" placeholder="Ej: 16" required>
                         </div>
                         <div class="form-group">
-                            <label for="direccion">Dirección:</label>
-                            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Calle, número, barrio" required>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="telefono">Teléfono:</label>
-                                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="+57 3XX XXX XXXX" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="whatsapp">Whatsapp:</label>
-                                    <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="+57 3XX XXX XXXX" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="contrasena">Contraseña:</label>
-                                    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña segura" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="fotoBlog">URL Foto Blog:</label>
-                                    <input type="text" class="form-control" id="fotoBlog" name="fotoBlog" placeholder="https://ejemplo.com/foto.jpg">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="idCiudad">ID Ciudad:</label>
-                                    <input type="text" class="form-control" id="idCiudad" name="idCiudad" placeholder="Ej: 01" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="idDepto">ID Departamento:</label>
-                                    <input type="text" class="form-control" id="idDepto" name="idDepto" placeholder="Ej: 05" required>
-                                </div>
-                            </div>
+                            <label for="nombreEspecie">Nombre Especie</label>
+                            <input type="text" class="form-control" name="nombreEspecie" id="nombreEspecie" placeholder="Ej: Serpiente" required>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        <i class="fas fa-times"></i> Cancelar
-                    </button>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> Guardar Fundación
-                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar Especie</button>
                 </div>
             </div>
         </div>
